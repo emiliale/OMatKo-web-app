@@ -58,14 +58,13 @@ export const authLogin = (username, password) => {
     }
 }
 
-export const authSignup = (username, email, password1, password2) => {
+export const authChangePassword = ( password, newpassword, confirm) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('http://127.0.0.1:8000/rest-auth/registration/', {
-            username: username,
-            email: email,
-            password1: password1,
-            password2: password2
+        axios.post('http://127.0.0.1:8000/rest-auth/password/change/ ', {
+            password: password,
+            newpassword: newpassword,
+            confrim: confirm
         })
         .then(res => {
             const token = res.data.key;
