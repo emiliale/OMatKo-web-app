@@ -1,10 +1,13 @@
 import React from 'react';
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
+import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions/auth';
 
-const { Header, Content, Footer } = Layout;
+
+const { SubMenu } = Menu;
+const { Header, Content, Sider, Footer } = Layout;
 
 class CustomLayout extends React.Component {
     render() {
@@ -22,9 +25,20 @@ class CustomLayout extends React.Component {
                 {
                     this.props.isAuthenticated ?
 
-                    <Menu.Item key="1" onClick={this.props.logout}>
-                        Wyloguj
-                    </Menu.Item>
+
+                    <SubMenu
+                        key="sub1"
+                        title={
+                          <span>
+                            <UserOutlined />
+                            Konto
+                          </span>
+                        }
+                      >
+                        <Menu.Item key="4" onClick={this.props.logout}>Wyloguj</Menu.Item>
+                        <Menu.Item key="3" ><Link to="/password">Zmień hasło</Link></Menu.Item>
+                      </SubMenu>
+
 
                     :
 
