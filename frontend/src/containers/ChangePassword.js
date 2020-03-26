@@ -15,11 +15,7 @@ class RegistrationForm extends React.Component {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        console.log(values.password);
-        console.log(values.confirm);
-        console.log(values.oldPassword);
-
-        this.props.onAuth(
+          this.props.onAuth(
             values.password,
             values.confirm,
             values.oldPassword
@@ -37,7 +33,7 @@ class RegistrationForm extends React.Component {
   compareToFirstPassword = (rule, value, callback) => {
     const form = this.props.form;
     if (value && value !== form.getFieldValue('password')) {
-      callback('Two passwords that you enter is inconsistent!');
+      callback('Hasła nie są ze sobą zgodne!');
     } else {
       callback();
     }
@@ -51,6 +47,22 @@ class RegistrationForm extends React.Component {
     callback();
   }
 
+  validatePassword = (rule, value, callback) => {
+    var passwordValidator = require('password-validator');
+    var schema = new passwordValidator();
+    schema
+      .is().min(8)                                    // Minimum length 8
+      .is().max(100)                                  // Maximum length 100
+      .has().uppercase()                              // Must have uppercase letters
+      .has().lowercase()                              // Must have lowercase letters
+      .has().digits();
+    if (value && (!(schema.validate(value)))) {
+      callback("Hasło musi posiadać: min. 8 znaków oraz wielką literę, małą literę i liczbę!");
+    } else {
+      callback();
+    }
+  };
+
 
   render() {
     const { getFieldDecorator } = this.props.form;
@@ -60,9 +72,9 @@ class RegistrationForm extends React.Component {
 
         <FormItem>
             {getFieldDecorator('oldPassword', {
-                rules: [{ required: true, message: 'Please input your current password!' }],
+                rules: [{ required: true, message: 'Wprowadź aktualne hasło!' }],
             })(
-                <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}type="password" placeholder="Current Password" />
+                <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}type="password" placeholder="Aktualne hasło" />
             )}
         </FormItem>
 
@@ -70,24 +82,25 @@ class RegistrationForm extends React.Component {
         <FormItem>
           {getFieldDecorator('password', {
             rules: [{
-              required: true, message: 'Please input your password!',
+              required: true, message: 'Wprowadź nowe hasło!',
             }, {
               validator: this.validateToNextPassword,
+              validator:  this.validatePassword,
             }],
           })(
-            <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+            <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Nowe hasło" />
           )}
         </FormItem>
 
         <FormItem>
           {getFieldDecorator('confirm', {
             rules: [{
-              required: true, message: 'Please confirm your password!',
+              required: true, message: 'Potwierdź hasło!',
             }, {
               validator: this.compareToFirstPassword,
             }],
           })(
-            <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Confirm Password" onBlur={this.handleConfirmBlur} />
+            <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Powtórz nowe hasło" onBlur={this.handleConfirmBlur} />
           )}
         </FormItem>
 

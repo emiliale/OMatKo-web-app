@@ -61,7 +61,6 @@ export const authLogin = (username, password) => {
 export const authChangePassword = ( newpassword, confirm, password) => {
     return dispatch => {
         dispatch(authStart());
-        console.log("Tokenik: " + localStorage.getItem('token'));
         axios.post('http://127.0.0.1:8000/rest-auth/password/change/', {
             new_password1: newpassword,
             new_password2: confirm,
