@@ -56,6 +56,8 @@ TEMPLATES = [
     },
 ]
 
+
+
 WSGI_APPLICATION = 'OMatKo.wsgi.application'
 
 DATABASES = {
