@@ -94,6 +94,7 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ),
 }
 CORS_ORIGIN_WHITELIST = (
@@ -105,3 +106,4 @@ CSRF_COOKIE_NAME = "csrftoken"
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+LOGOUT_ON_PASSWORD_CHANGE = False

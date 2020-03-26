@@ -58,15 +58,17 @@ export const authLogin = (username, password) => {
     }
 }
 
-export const authSignup = (username, email, password1, password2) => {
+export const authChangePassword = ( newpassword, confirm, password) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('http://127.0.0.1:8000/rest-auth/registration/', {
-            username: username,
-            email: email,
-            password1: password1,
-            password2: password2
-        })
+        console.log("Tokenik: " + localStorage.getItem('token'));
+        axios.post('http://127.0.0.1:8000/rest-auth/password/change/', {
+            new_password1: newpassword,
+            new_password2: confirm,
+            old_password: password
+          },{
+            headers: { Authorization: "Token " + localStorage.getItem('token')}
+          })
         .then(res => {
             const token = res.data.key;
             const expirationDate = new Date(new Date().getTime() + 3600 * 1000);

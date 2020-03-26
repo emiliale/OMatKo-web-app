@@ -1,30 +1,51 @@
 import React from 'react';
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
+import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions/auth';
 
-const { Header, Content, Footer } = Layout;
+
+const { SubMenu } = Menu;
+const { Header, Content, Sider, Footer } = Layout;
 
 class CustomLayout extends React.Component {
     render() {
         return (
             <Layout className="layout">
-                <Header>
+                <Header style={{backgroundColor: "#ffffff"}}>
                 <div className="logo" />
                 <Menu
-                    theme="dark"
+                    theme="light"
                     mode="horizontal"
                     defaultSelectedKeys={['2']}
-                    style={{ lineHeight: '64px' }}
+                    style={{ lineHeight: '64px', backgroundColor: "#ffffff"}}
                 >
+
+                <Menu.Item key="3">
+                    <img
+                    width={200}
+                    alt="logo"
+                    src="https://www.math.uni.lodz.pl/wp-content/uploads/2017/03/logo-1024x250.jpg" />
+                </Menu.Item>
 
                 {
                     this.props.isAuthenticated ?
 
-                    <Menu.Item key="1" onClick={this.props.logout}>
-                        Wyloguj
-                    </Menu.Item>
+
+                    <SubMenu
+                        key="sub1"
+                        title={
+                          <span>
+                            <UserOutlined />
+                            Konto
+                          </span>
+                        }
+                      >
+                        <Menu.Item key="4" onClick={this.props.logout}>Wyloguj</Menu.Item>
+                        <Menu.Item key="3" ><Link to="/password">Zmień hasło</Link></Menu.Item>
+                      </SubMenu>
+
 
                     :
 
