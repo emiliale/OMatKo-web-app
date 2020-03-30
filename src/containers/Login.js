@@ -3,6 +3,7 @@ import { Form, Icon, Input, Button, Spin } from 'antd';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import * as actions from '../store/actions/auth';
+import Popup from "reactjs-popup";
 
 const FormItem = Form.Item;
 const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
