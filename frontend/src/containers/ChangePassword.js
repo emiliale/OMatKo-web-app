@@ -65,6 +65,10 @@ class RegistrationForm extends React.Component {
 
 
   render() {
+    <Breadcrumb style={{ margin: '16px 0' }}>
+                    <Breadcrumb.Item><Link to="/">Strona Główna</Link></Breadcrumb.Item>
+                    <Breadcrumb.Item><Link to="/">Logowanie</Link></Breadcrumb.Item>
+                </Breadcrumb>
     const { getFieldDecorator } = this.props.form;
 
     return (
