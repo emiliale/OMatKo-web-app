@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: waitress-serve OMatKo.wsgi:application
+web: waitress-serve --port=8080 OMatKo.wsgi:application
