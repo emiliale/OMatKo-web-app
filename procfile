@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: waitress-serve --port=5.173.247.188 OMatKo.wsgi:application
+web: gunicorn OMatKo.wsgi
