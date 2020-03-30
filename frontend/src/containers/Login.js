@@ -42,9 +42,9 @@ class NormalLoginForm extends React.Component {
 
                     <FormItem>
                     {getFieldDecorator('userName', {
-                        rules: [{ required: true, message: 'Wpisz nawę użytkownika!' }],
+                        rules: [{ required: true, message: 'Wpisz nazwę użytkownika!' }],
                     })(
-                        <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Nazwa użtykownika" />
+                        <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Nazwa użytkownika" />
                     )}
                     </FormItem>
 
