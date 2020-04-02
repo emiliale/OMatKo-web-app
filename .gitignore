@@ -2,5 +2,7 @@ env
 **/*.pyc
 node_modules/
 build
+
+# Byte-compiled / optimized / DLL files
 __pycache__/
-bd.sqlite3/
+*.py[cod]
