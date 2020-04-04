@@ -10,5 +10,6 @@ Run backend:
 Run frontend:
 1. cd frontend
 2. npm i
-3. npm run build
+3. npm start
+
 
