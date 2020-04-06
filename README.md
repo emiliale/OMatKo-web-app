@@ -1,23 +1,52 @@
 # OMatKo
 
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Documenation](#doc)
+
+## General info
+This project is simple web app, which is created on course "Advanced Web Technologies" at the Wroclaw University of Technology.
+	
+## Technologies
+Project is created with:
+* Django
+* React
+	
+## Setup
 Run the following commands to get started:
 
-Run backend:
+### Run backend:
 1. cd backend
 2. pip install -r packages.txt
 3. python manage.py runserver
 
-Run frontend:
+### Run frontend:
 1. cd frontend
 2. npm i
 3. npm start
 
+## Documentation
+Several screenshots showing how the application works:
 
-# Home page
+### Home page
+Welcome in our page!
+![Main page](./images/main.PNG)
+
+### Log in and log out
+If you don't have account or you aren't log in:
+![Log in](./images/log_in.PNG)
+
+Error handling:
+
+* if you don't enter a password:
+![Log in](./images/error1.PNG)
+* if you want change the password, but your new password does not meet the requirements:
+![Log in](./images/error2.PNG)
 
 
-# Log in and log out
-
-
-# News feed
+### News feed
+On the next page you will find news:
+![Some News](./images/news.PNG)
 
