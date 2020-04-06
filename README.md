@@ -12,3 +12,11 @@ Run frontend:
 2. npm i
 3. npm run build
 
+# Home page
+
+
+# Log in and log out
+
+
+# News feed
+
