@@ -23,10 +23,12 @@ class CustomLayout extends React.Component {
                 >
 
                 <Menu.Item key="3">
+                <Link to="/">
                     <img
                     width={200}
                     alt="logo"
                     src="https://www.math.uni.lodz.pl/wp-content/uploads/2017/03/logo-1024x250.jpg" />
+                    </Link>
                 </Menu.Item>
 
                 {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Input, Icon, Button } from 'antd';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import * as actions from '../store/actions/auth';
 
 const FormItem = Form.Item;
@@ -65,10 +65,7 @@ class RegistrationForm extends React.Component {
 
 
   render() {
-    <Breadcrumb style={{ margin: '16px 0' }}>
-                    <Breadcrumb.Item><Link to="/">Strona Główna</Link></Breadcrumb.Item>
-                    <Breadcrumb.Item><Link to="/">Logowanie</Link></Breadcrumb.Item>
-                </Breadcrumb>
+
     const { getFieldDecorator } = this.props.form;
 
     return (
