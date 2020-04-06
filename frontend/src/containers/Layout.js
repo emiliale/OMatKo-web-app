@@ -45,7 +45,7 @@ class CustomLayout extends React.Component {
                         }
                       >
                         <Menu.Item key="4" onClick={this.props.logout}>Wyloguj</Menu.Item>
-                        <Menu.Item key="3" ><Link to="/password">Zmień hasło</Link></Menu.Item>
+                        <Menu.Item key="5" ><Link to="/password">Zmień hasło</Link></Menu.Item>
                       </SubMenu>
 
 
@@ -60,11 +60,15 @@ class CustomLayout extends React.Component {
                         <Link to="/">Aktualności</Link>
                     </Menu.Item>
 
+                    <Menu.Item key="3">
+                        <Link to="/main">Strona główna</Link>
+                    </Menu.Item>
+
                 </Menu>
                 </Header>
                 <Content style={{ padding: '0 50px' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
-                    <Breadcrumb.Item><Link to="/">Strona Główna</Link></Breadcrumb.Item>
+                    <Breadcrumb.Item><Link to="/main">Strona Główna</Link></Breadcrumb.Item>
                     <Breadcrumb.Item><Link to="/">Aktualności</Link></Breadcrumb.Item>
                 </Breadcrumb>
                     <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
