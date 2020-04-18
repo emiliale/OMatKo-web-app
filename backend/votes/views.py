@@ -2,7 +2,6 @@ from django.db import IntegrityError
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from OMatKo.apps.utils import generate_code
 from .models import Event
 from .models import Vote, Voter, VoteWeight, PRESENTATION, CONTENT
 
@@ -68,3 +67,17 @@ def add_voters(request, number_of_voters):
         )
 
     return Response(VOTERS_CREATED, status.HTTP_201_CREATED)
+
+
+    def generate_code():
+    numbers = [int(num) for num in np.linspace(48, 57, num=10)]
+
+    lowercase = [int(num) for num in np.linspace(65, 72, num=8)] + \
+                [int(num) for num in np.linspace(74, 90, num=17)]
+
+    uppercase = [int(num) for num in np.linspace(97, 107, num=11)] +\
+                [int(num) for num in np.linspace(109, 122, num=14)]
+
+    chr_numbers = numbers + lowercase + uppercase
+
+    return ''.join([chr(chr_numbers[randint(0, 59)]) for i in range(0, 20)])
