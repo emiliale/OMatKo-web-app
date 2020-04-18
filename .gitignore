@@ -9,3 +9,4 @@ __pycache__/
 
 # Ignore the default SQLite database.
 *.sqlite3
+backend/db.sqlite3
