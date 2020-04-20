@@ -50,3 +50,9 @@ Error handling:
 On the next page you will find news:
 ![Some News](./images/news.PNG)
 
+### Voting page
+When you log in, you can vote for lecture.
+![Voting page](./images/voting_page.PNG)
+
+Please send your vote to us!
+![Vote](./images/vote.PNG)
