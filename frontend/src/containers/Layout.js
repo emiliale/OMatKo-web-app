@@ -44,14 +44,14 @@ class CustomLayout extends React.Component {
                           </span>
                         }
                       >
-                        <Menu.Item key="4" onClick={this.props.logout}>Wyloguj</Menu.Item>
-                        <Menu.Item key="5" ><Link to="/password">Zmień hasło</Link></Menu.Item>
-                        <Menu.Item key="6" ><Link to="/vote">Głosuj</Link></Menu.Item>
+                        <Menu.Item key="4" ><Link to="/password">Zmień hasło</Link></Menu.Item>
+                        <Menu.Item key="5" ><Link to="/vote">Głosuj</Link></Menu.Item>
+                        <Menu.Item key="6" onClick={this.props.logout}>Wyloguj</Menu.Item>
                       </SubMenu>
                     :
 
                     <Menu.Item key="1">
-                        <Link to="/login">Zaloguj</Link>
+                        <Link to="/login">Zaloguj się</Link>
                     </Menu.Item>
                 }
 
@@ -62,6 +62,7 @@ class CustomLayout extends React.Component {
                     <Menu.Item key="3">
                         <Link to="/main">Strona główna</Link>
                     </Menu.Item>
+
 
                 </Menu>
                 </Header>
