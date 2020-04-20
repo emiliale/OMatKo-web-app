@@ -1,7 +1,6 @@
 import React from 'react';
 import { Form, Input, Icon, Button } from 'antd';
 import { connect } from 'react-redux';
-import { NavLink, Link } from 'react-router-dom';
 import * as actions from '../store/actions/auth';
 
 const FormItem = Form.Item;
