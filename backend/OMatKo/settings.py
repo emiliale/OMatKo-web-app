@@ -24,7 +24,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
 
-    'articles'
+    'articles',
+    'poll',
+    'schedule',
+    'votes',
+
 ]
 
 MIDDLEWARE = [

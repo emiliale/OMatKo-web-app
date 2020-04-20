@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% if choice_list %}
+        <ul>
+        {% for vote in choice_list %}
+          <li><a href="{% url 'detail' vote.id %}">{{ vote.lectureCode }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polable.</p>
+    {% endif %}
+
+    <h1>Oceń wykład</h1>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+    <form action="{% url 'poll:vote' vote.id %}" method="post">
+    {% csrf_token %}
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ vote.id }}">
+        <label for="choice{{ forloop.counter }}">{{ vote.contentRate }}</label><br>
+        <label for="choice{{ forloop.counter }}">{{ vote.presentationRate }}</label><br>
+    <input type="submit" value="Vote">
+    </form>
+  </body>
+</html>
