@@ -113,3 +113,6 @@ ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 LOGOUT_ON_PASSWORD_CHANGE = False
+
+import django_heroku
+django_heroku.settings(locals())
