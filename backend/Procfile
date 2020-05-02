@@ -1,0 +1,1 @@
+web: gunicorn OMatKo.wsgi --log-file -
