@@ -22,7 +22,7 @@ class CustomLayout extends React.Component {
                     style={{ lineHeight: '64px', backgroundColor: "#ffffff"}}
                 >
 
-                <Menu.Item key="3">
+                <Menu.Item key="8">
                 <Link to="/">
                     <img
                     width={200}
