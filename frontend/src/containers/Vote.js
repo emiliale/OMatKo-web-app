@@ -3,6 +3,7 @@ import { Form, Input, Icon, Button, Rate } from 'antd';
 import { HeartOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions/auth';
+import { Link } from 'react-router-dom';
 
 const FormItem = Form.Item;
 
@@ -59,7 +60,10 @@ class RegistrationForm extends React.Component {
             </FormItem>
         <FormItem>
         <Button type="primary" htmlType="submit" style={{marginRight: '10px'}}>
-            Zmień hasło
+            Zapisz
+              </Button>
+        <Button type="default"  htmlType="submit" style={{marginTop: "4px", float: "right"}}>
+          <Link to="/rate">Wyświetl już oddane głosy</Link>
         </Button>
         </FormItem>
 

@@ -8,12 +8,12 @@
 
 ## General info
 This project is simple web app, which is created on course "Advanced Web Technologies" at the Wroclaw University of Technology.
-	
+
 ## Technologies
 Project is created with:
 * Django
 * React
-	
+
 ## Setup
 Run the following commands to get started:
 
@@ -55,4 +55,7 @@ When you log in, you can vote for lecture.
 ![Voting page](./images/voting_page.png)
 
 Please send your vote to us!
-![Vote](./images/vote.png)
+![Vote](./images/vote.PNG)
+
+You can check your votes
+![Vote](./images/rate.PNG)

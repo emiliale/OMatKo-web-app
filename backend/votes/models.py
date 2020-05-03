@@ -1,5 +1,6 @@
 from django.db import models
 from schedule.models import Event
+from django.contrib.auth.models import User
 
 CONTENT = 'CONTENT'
 PRESENTATION = 'PRESENTATION'
@@ -20,8 +21,8 @@ class Voter(models.Model):
 
 
 class Vote(models.Model):
-    voter = models.ForeignKey(
-        Voter,
+    user = models.ForeignKey(
+        User,
         models.CASCADE,
         blank=False,
         null=False
@@ -44,7 +45,7 @@ class Vote(models.Model):
     )
 
     class Meta:
-        unique_together = (('voter', 'lecture'),)
+        unique_together = (('user', 'lecture'),)
 
 
 class VoteWeight(models.Model):
