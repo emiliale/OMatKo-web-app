@@ -52,10 +52,10 @@ On the next page you will find news:
 
 ### Voting page
 When you log in, you can vote for lecture.
-![Voting page](./images/voting_page.PNG)
+![Voting page](./images/voting_page.png)
 
 Please send your vote to us!
-![Vote](./images/vote.PNG)
+![Vote](./images/vote.png)
 
 You can check your votes
-![Vote](./images/rate.PNG)
+![Vote](./images/rate.png)
