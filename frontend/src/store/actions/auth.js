@@ -1,6 +1,12 @@
 import axios from 'axios';
 import * as actionTypes from './actionTypes';
 
+const env = process.env.NODE_ENV || "development";
+const serverUrl =
+    env === "development"
+        ? "http://127.0.0.1:8000/"
+        : "https://omatko-app-backend.herokuapp.com";
+
 export const authStart = () => {
     return {
         type: actionTypes.AUTH_START
@@ -40,7 +46,7 @@ export const checkAuthTimeout = expirationTime => {
 export const authLogin = (username, password) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('http://127.0.0.1:8000/rest-auth/login/', {
+        axios.post(`${serverUrl}/rest-auth/login/`, {
             username: username,
             password: password
         })
@@ -67,7 +73,7 @@ export const authLogin = (username, password) => {
 export const authChangePassword = ( newpassword, confirm, password) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('http://127.0.0.1:8000/rest-auth/password/change/', {
+        axios.post(`${serverUrl}/rest-auth/password/change/`, {
             new_password1: newpassword,
             new_password2: confirm,
             old_password: password
@@ -94,7 +100,7 @@ export const authChangePassword = ( newpassword, confirm, password) => {
 export const authVote = ( code, rate_content, rate_presentation) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('http://127.0.0.1:8000/apiVote/', {
+        axios.post(`${serverUrl}/apiVote/`, {
             code: code,
             rate_content: rate_content,
             rate_presentation: rate_presentation

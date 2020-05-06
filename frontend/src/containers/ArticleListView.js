@@ -3,6 +3,12 @@ import axios from "axios";
 import Articles from "../components/Article";
 import CustomForm from "../components/Form";
 
+const env = process.env.NODE_ENV || "development";
+const serverUrl =
+    env === "development"
+        ? "http://127.0.0.1:8000/"
+        : "https://omatko-app-backend.herokuapp.com";
+
 
 class ArticleList extends React.Component {
   state = {
@@ -10,7 +16,7 @@ class ArticleList extends React.Component {
   };
 
   fetchArticles = () => {
-    axios.get("http://127.0.0.1:8000/api/").then(res => {
+    axios.get(`${serverUrl}/api/`).then(res => {
       this.setState({
         articles: res.data
       });

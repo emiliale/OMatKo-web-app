@@ -4,6 +4,12 @@ import { connect } from "react-redux";
 import { Button, Card } from "antd";
 import CustomForm from "../components/Form";
 
+const env = process.env.NODE_ENV || "development";
+const serverUrl =
+    env === "development"
+        ? "http://127.0.0.1:8000/"
+        : "https://omatko-app-backend.herokuapp.com";
+
 
 class ArticleDetail extends React.Component {
   state = {
@@ -12,7 +18,7 @@ class ArticleDetail extends React.Component {
 
   componentDidMount() {
     const articleID = this.props.match.params.articleID;
-    axios.get(`http://127.0.0.1:8000/api/${articleID}`).then(res => {
+    axios.get(`${serverUrl}/api/${articleID}`).then(res => {
       this.setState({
         article: res.data
       });

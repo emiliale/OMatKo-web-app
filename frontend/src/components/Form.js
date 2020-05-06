@@ -5,9 +5,14 @@ import axios from "axios";
 
 const FormItem = Form.Item;
 
+const env = process.env.NODE_ENV || "development";
+const serverUrl =
+    env === "development"
+        ? "http://127.0.0.1:8000/"
+        : "https://omatko-app-backend.herokuapp.com";
 
 class CustomForm extends React.Component {
-  
+
   handleFormSubmit = async (event, requestType, articleID) => {
     event.preventDefault();
 
@@ -22,16 +27,16 @@ class CustomForm extends React.Component {
       "Content-Type": "application/json",
       Authorization: `Token ${this.props.token}`,
     };
-    
+
     if (requestType === "post") {
-      await axios.post("http://127.0.0.1:8000/api/create/", postObj)
+      await axios.post(`${serverUrl}/api/create/`, postObj)
         .then(res => {
           if (res.status === 201) {
             this.props.history.push(`/`);
           }
         })
     } else if (requestType === "put") {
-      await axios.put(`http://127.0.0.1:8000/api/${articleID}/update/`, postObj)
+      await axios.put(`${serverUrl}/api/${articleID}/update/`, postObj)
         .then(res => {
           if (res.status === 200) {
             this.props.history.push(`/`);
