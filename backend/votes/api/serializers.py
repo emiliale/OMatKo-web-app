@@ -15,5 +15,5 @@ class UserSerializer(serializers.ModelSerializer):
     votes = serializers.PrimaryKeyRelatedField(many=True, queryset=Vote.objects.all())
     class Meta:
         model = User
-        fields = ['id', 'username', 'snippets']
+        fields = ['id', 'username', 'votes']
         depth = 1

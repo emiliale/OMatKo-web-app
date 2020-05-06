@@ -1,6 +1,5 @@
 import React from "react";
-import { List, Avatar, Icon } from "antd";
-import jwt from "jsonwebtoken";
+import { List, Avatar, Icon, Button } from "antd";
 
 const IconText = ({ type, text }) => (
   <span>
@@ -40,11 +39,17 @@ const filterData = () => {
       renderItem={item => (
         <List.Item>
         <List.Item.Meta
-          avatar={<Avatar src="https://st2.depositphotos.com/8430356/11389/v/950/depositphotos_113897828-stock-illustration-heart-icon-isolated-on-white.jpg" />}
+          avatar={
+            <div>
+            <Button><Icon type="edit" style={{ color: 'rgba(0,0,0,F)' }} /></Button>
+            <Button><Icon type="delete" style={{ color: 'rgba(0,0,0,F)' }} /></Button>
+            </div>
+          }
           title={<a href="https://ant.design"><p>Kod: {item.lecture}</p></a>}
           description={<ul><li>Ocena merytoryczna: {item.content_vote}</li>
                         <li>Ocena sposoby prezentacji: {item.presentation_vote}</li></ul>}
         />
+
       </List.Item>
       )}
     />
