@@ -46,8 +46,10 @@ export const authLogin = (username, password) => {
         })
         .then(res => {
             const token = res.data.key;
+            const usrname = username;
             const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
             localStorage.setItem('token', token);
+            localStorage.setItem('username', usrname);
             localStorage.setItem('expirationDate', expirationDate);
             dispatch(authSuccess(token));
             dispatch(checkAuthTimeout(3600));
@@ -108,10 +110,7 @@ export const authVote = ( code, rate_content, rate_presentation) => {
             dispatch(checkAuthTimeout(3600));
         })
         .catch(err => {
-          if(err === "Error: Request failed with status code 401"){
-            window.alert("Niepoprawne hasło");
-          }
-            dispatch(authFail(err))
+                dispatch(authFail(err))
         })
     }
 }

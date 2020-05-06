@@ -1,42 +1,34 @@
 import React from "react";
-import { List, Avatar, Icon } from "antd";
+import axios from "axios";
+import Rates from "../components/Rate";
+import CustomForm from "../components/Form";
 
-const IconText = ({ type, text }) => (
-  <span>
-    <Icon
-      type={type}
-      style={{
-        marginRight: 8
-      }}
-    />
-    {text}
-  </span>
-);
 
-const Rates = props => {
-  return (
-    <List
-      itemLayout="vertical"
-      size="large"
-      pagination={{
-        onChange: page => {
-          console.log(page);
-        },
-        pageSize: 3
-      }}
-      dataSource={props.data}
-      renderItem={item => (
-        <List.Item>
-        <List.Item.Meta
-          avatar={<Avatar src="https://st2.depositphotos.com/8430356/11389/v/950/depositphotos_113897828-stock-illustration-heart-icon-isolated-on-white.jpg" />}
-          title={<a href="https://ant.design">{item.lecture}</a>}
-          description={<ul><li>Ocena merytoryczna: {item.content_vote}</li>
-                        <li>Ocena sposoby prezentacji: {item.presentation_vote}</li></ul>}
-        />
-      </List.Item>
-      )}
-    />
-  );
-};
+class RateList extends React.Component {
+  state = {
+    articles: []
+  };
 
-export default Rates;
+  fetchRates = () => {
+    axios.get("http://127.0.0.1:8000/apiVote/").then(res => {
+      this.setState({
+        rates: res.data
+      });
+    });
+  }
+
+  componentDidMount() {
+    this.fetchRates();
+  }
+
+
+  render() {
+    return (
+      <div>
+        <Rates data={this.state.rates} /> <br />
+      </div>
+    );
+  }
+}
+
+export default RateList;

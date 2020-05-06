@@ -26,7 +26,6 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
 
     'articles',
-    'poll',
     'schedule',
     'votes',
 
