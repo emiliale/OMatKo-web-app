@@ -4,8 +4,9 @@ import * as actionTypes from './actionTypes';
 const env = process.env.NODE_ENV || "development";
 const serverUrl =
     env === "development"
-        ? "http://127.0.0.1:8000/"
+        ? "http://127.0.0.1:8000"
         : "https://omatko-app-backend.herokuapp.com";
+
 
 export const authStart = () => {
     return {
@@ -61,7 +62,9 @@ export const authLogin = (username, password) => {
             dispatch(checkAuthTimeout(3600));
         })
         .catch(err => {
-          if(err === "Error: Request failed with status code 400"){
+          console.log(err);
+          if(err == "Error: Request failed with status code 400"){
+            console.log(err);
             window.alert("Niepoprawny login lub hasło");
           }
             dispatch(authFail(err))

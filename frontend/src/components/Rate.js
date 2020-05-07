@@ -1,5 +1,6 @@
 import React from "react";
 import { List, Avatar, Icon, Button } from "antd";
+import axios from "axios";
 
 const IconText = ({ type, text }) => (
   <span>
@@ -14,6 +15,20 @@ const IconText = ({ type, text }) => (
 );
 
 const Rates = props => {
+
+const handleDelete = (id, event) => {
+    const voteID = id;
+    axios.defaults.headers = {
+     "Content-Type": "application/json",
+     Authorization: `Token ${localStorage.getItem('token')}`
+   };
+    axios.delete(`http://127.0.0.1:8000/apiVote/${voteID}/delete/`)
+    .then(res => {
+      if (res.status === 204) {
+        window.location.reload(false);
+      }
+    })
+  };
 
 const username = localStorage.getItem('username');
 
@@ -42,10 +57,10 @@ const filterData = () => {
           avatar={
             <div>
             <Button><Icon type="edit" style={{ color: 'rgba(0,0,0,F)' }} /></Button>
-            <Button><Icon type="delete" style={{ color: 'rgba(0,0,0,F)' }} /></Button>
+            <Button type='danger' onClick={handleDelete.bind(this, item.id)}><Icon type="delete" style={{ color: 'rgba(0,0,0,F)' }} /></Button>
             </div>
           }
-          title={<a href="https://ant.design"><p>Kod: {item.lecture}</p></a>}
+          title={<a href={`/rate/${item.id}`}><p>Kod: {item.lecture}</p></a>}
           description={<ul><li>Ocena merytoryczna: {item.content_vote}</li>
                         <li>Ocena sposoby prezentacji: {item.presentation_vote}</li></ul>}
         />

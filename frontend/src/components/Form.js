@@ -8,7 +8,7 @@ const FormItem = Form.Item;
 const env = process.env.NODE_ENV || "development";
 const serverUrl =
     env === "development"
-        ? "http://127.0.0.1:8000/"
+        ? "http://127.0.0.1:8000"
         : "https://omatko-app-backend.herokuapp.com";
 
 class CustomForm extends React.Component {
