@@ -55,14 +55,14 @@ class RegistrationForm extends React.Component {
 
         <FormItem  label="" rules={[{ required: true }]}>
             {getFieldDecorator('rate_content')(
-              <Rate character={<HeartOutlined />} allowHalf/>
+              <Rate character={<HeartOutlined />}/>
                 )}
             <span className="rate_content">Ocena za merytorykę</span>
         </FormItem>
 
         <FormItem>
             {getFieldDecorator('rate_presentation')(
-              <Rate character={<HeartOutlined />} allowHalf/>
+              <Rate character={<HeartOutlined />}/>
                 )}
                 <span className="rate_presentation">Ocena za prezentację</span>
             </FormItem>
