@@ -22,7 +22,6 @@ class RegistrationForm extends React.Component {
 
   componentDidMount() {
     const voteID = this.props.match.params.voteID;
-    console.log(voteID);
     axios.get(`${serverUrl}/apiVote/${voteID}`).then(res => {
       this.setState({
         vote: res.data
@@ -35,9 +34,10 @@ class RegistrationForm extends React.Component {
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
           this.props.onAuth(
-            values.code,
-            values.rate_content,
-            values.rate_presentation
+            this.state.vote.lecture,
+            values.rate_content.toString(),
+            values.rate_presentation.toString(),
+            this.props.match.params.voteID
         );
         this.props.history.push('/');
       }
@@ -89,7 +89,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAuth: (code, rate_content, rate_presentation, token) => dispatch(actions.authVote(code, rate_content, rate_presentation, token))
+        onAuth: (code, rate_content, rate_presentation, id, token) => dispatch(actions.authVoteUpdate(code, rate_content, rate_presentation, id, token))
     }
 }
 

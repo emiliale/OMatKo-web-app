@@ -31,6 +31,7 @@ export const authFail = error => {
 export const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('expirationDate');
+    localStorage.removeItem('username');
     return {
         type: actionTypes.AUTH_LOGOUT
     };
@@ -118,6 +119,30 @@ export const authVote = ( code, rate_content, rate_presentation) => {
             dispatch(authSuccess(token));
             dispatch(checkAuthTimeout(3600));
         })
+        .catch(err => {
+                dispatch(authFail(err))
+        })
+    }
+}
+
+
+export const authVoteUpdate = ( code, rate_content, rate_presentation, id) => {
+    return dispatch => {
+        dispatch(authStart());
+        console.log(code);
+        console.log(rate_content);
+        console.log(rate_presentation);
+        console.log(id);
+        console.log(`${serverUrl}/apiVote/${id}/update/`);
+        console.log(localStorage.getItem('token'));
+
+        axios.put(`${serverUrl}/apiVote/${id}/update/`, {
+            lecture: code,
+            content_vote: rate_content,
+            presentation_vote: rate_presentation
+          },{
+            headers: { Authorization: "Token " + localStorage.getItem('token')}
+          })
         .catch(err => {
                 dispatch(authFail(err))
         })

@@ -1,6 +1,7 @@
 import React from "react";
 import { List, Avatar, Icon, Button } from "antd";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 const IconText = ({ type, text }) => (
   <span>
@@ -56,7 +57,7 @@ const filterData = () => {
         <List.Item.Meta
           avatar={
             <div>
-            <Button><Icon type="edit" style={{ color: 'rgba(0,0,0,F)' }} /></Button>
+            <Button><Link to={`/rate/${item.id}`}><Icon type="edit" style={{ color: 'rgba(0,0,0,F)' }} /></Link></Button>
             <Button type='danger' onClick={handleDelete.bind(this, item.id)}><Icon type="delete" style={{ color: 'rgba(0,0,0,F)' }} /></Button>
             </div>
           }

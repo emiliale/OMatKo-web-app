@@ -32,7 +32,8 @@ class VoteDetailView(RetrieveAPIView):
 class VoteUpdateView(UpdateAPIView):
     queryset = Vote.objects.all()
     serializer_class = VoteSerializer
-    permission_classes = (permissions.IsAuthenticated, )
+    permission_classes = (permissions.AllowAny,)
+
 
 class VoteDeleteView(DestroyAPIView):
     queryset = Vote.objects.all()
