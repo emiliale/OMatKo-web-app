@@ -21,7 +21,6 @@ class RegistrationForm extends React.Component {
             values.rate_content,
             values.rate_presentation
         );
-        window.alert("Oddano głos");
         this.props.history.push('/');
       }
     });

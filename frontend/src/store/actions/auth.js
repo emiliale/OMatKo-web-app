@@ -111,10 +111,24 @@ export const authVote = ( code, rate_content, rate_presentation) => {
           },{
             headers: { Authorization: "Token " + localStorage.getItem('token')}
           })
+        .then( () => window.alert("Oddano głos"))
         .catch(err => {
+                console.log(err.message);
+                switch (err.message) {
+                  case "Request failed with status code 500":
+                    window.alert("Oceniono już te prelekcję!");
+                    break;
+                  case "Request failed with status code 400":
+                    window.alert("Niewypełniono wszystkich pól lub niepoprawny kod prelekcji!");
+                    break;
+                  default:
+                    window.alert("Nastąpił błąd-głos nie oddany");
+                    break;
+                }
                 dispatch(authFail(err))
         })
     }
+
 }
 
 
