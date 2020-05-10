@@ -104,21 +104,13 @@ export const authChangePassword = ( newpassword, confirm, password) => {
 export const authVote = ( code, rate_content, rate_presentation) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post(`${serverUrl}/apiVote/`, {
-            code: code,
-            rate_content: rate_content,
-            rate_presentation: rate_presentation
+        axios.post(`${serverUrl}/apiVote/create/`, {
+          lecture: code,
+          content_vote: rate_content,
+          presentation_vote: rate_presentation
           },{
             headers: { Authorization: "Token " + localStorage.getItem('token')}
           })
-        .then(res => {
-            const token = res.data.key;
-            const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
-            localStorage.setItem('token', token);
-            localStorage.setItem('expirationDate', expirationDate);
-            dispatch(authSuccess(token));
-            dispatch(checkAuthTimeout(3600));
-        })
         .catch(err => {
                 dispatch(authFail(err))
         })

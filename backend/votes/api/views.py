@@ -23,6 +23,8 @@ class VoteCreateView(CreateAPIView):
     queryset = Vote.objects.all()
     serializer_class = VoteSerializer
     permission_classes = (permissions.AllowAny, )
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 
 class VoteDetailView(RetrieveAPIView):
     queryset = Vote.objects.all()
