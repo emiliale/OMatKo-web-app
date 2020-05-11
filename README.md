@@ -57,8 +57,9 @@ When you log in, you can vote for lecture.
 Please send your vote to us!
 ![Vote](./images/vote.png)
 
-You can check your votes, edit or delete them 
+You can check your votes, edit or delete them
 ![Vote](./images/voteList.png)
 
 Change your rates!
+
 ![Vote](./images/editVote.png)
