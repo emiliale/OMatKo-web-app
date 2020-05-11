@@ -10,3 +10,7 @@ __pycache__/
 # Ignore the default SQLite database.
 *.sqlite3
 backend/db.sqlite3
+backend/articles/migrations/__pycache__/0001_initial.cpython-36.pyc
+backend/articles/api/__pycache__/views.cpython-36.pyc
+backend/articles/api/__pycache__/views.cpython-36.pyc
+*.pyc
