@@ -4,7 +4,7 @@ import dj_database_url
 import dotenv
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print(BASE_DIR)
+
 DOTENV_FILE = os.path.join(BASE_DIR, ".env")
 ENV = False
 
@@ -24,6 +24,8 @@ if ENV:
 else:
     DATABASES = dict()
     DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+print(DATABASES)
 
 
 SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
@@ -87,8 +89,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'OMatKo.wsgi.application'
 
-DATABASES = {} 
-DATABASES ['default'] = dj_database_url.config (conn_max_age = 600)
+
 
 AUTH_PASSWORD_VALIDATORS = [
     # {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
