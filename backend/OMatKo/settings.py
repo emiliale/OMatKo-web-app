@@ -137,5 +137,4 @@ LOGOUT_ON_PASSWORD_CHANGE = False
 
 
 django_heroku.settings(locals())
-if not ENV:
-    del DATABASES['default']['OPTIONS']['sslmode']
+del DATABASES['default']['OPTIONS']['sslmode']
