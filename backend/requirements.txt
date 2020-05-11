@@ -25,6 +25,6 @@ typed-ast==1.1.0
 urllib3==1.24.2
 whitenoise==3.3.1
 wrapt==1.10.11
-python-dotenv==0.10.1
+Python-dotenv==0.13.0
 dj-database-url == 0.5.0                                                                                                                                                   
-psycopg2 == 2.7.7
+psycopg2 == 2.8.5
