@@ -4,7 +4,7 @@ import dj_database_url
 import dotenv
 
 dotenv_file = os.path.join (BASE_DIR, ".env") 
-if os.path.isfile (plik_ dotenv): 
+if os.path.isfile (dotenv_file): 
     dotenv.load_dotenv (plik_en)
 SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
 DEBUG = True
@@ -44,6 +44,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'OMatKo.urls'
@@ -66,12 +67,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'OMatKo.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+DATABASES = {} 
+DATABASES ['default'] = dj_database_url.config (conn_max_age = 600)
 
 AUTH_PASSWORD_VALIDATORS = [
     # {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
@@ -86,6 +83,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'build/static'),
@@ -118,3 +116,4 @@ LOGOUT_ON_PASSWORD_CHANGE = False
 
 
 django_heroku.settings(locals())
+del DATABASES ['default'] ['OPTIONS'] ['sslmode']
