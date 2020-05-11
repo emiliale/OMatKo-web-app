@@ -23,7 +23,9 @@ if ENV:
     }
 else:
     DATABASES = {}
-    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 print(DATABASES)
 
@@ -138,3 +140,4 @@ LOGOUT_ON_PASSWORD_CHANGE = False
 
 django_heroku.settings(locals())
 del DATABASES['default']['OPTIONS']['sslmode']
+print(DATABASES)
