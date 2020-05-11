@@ -1,7 +1,31 @@
 import os
 import django_heroku
+import dj_database_url 
+import dotenv
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print(BASE_DIR)
+DOTENV_FILE = os.path.join(BASE_DIR, ".env")
+ENV = False
+
+if os.path.isfile(DOTENV_FILE):
+    ENV = True
+if ENV:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': dotenv.get_key(DOTENV_FILE, 'DB_NAME'),
+            'USER': dotenv.get_key(DOTENV_FILE, 'DB_USER'),
+            'PASSWORD': dotenv.get_key(DOTENV_FILE, 'DB_PASSWORD'),
+            'HOST': dotenv.get_key(DOTENV_FILE, 'DB_HOST'),
+            'PORT': dotenv.get_key(DOTENV_FILE, 'DB_PORT')
+        }
+    }
+else:
+    DATABASES = dict()
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+
 SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
 DEBUG = True
 ALLOWED_HOSTS = []
@@ -40,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'OMatKo.urls'
@@ -62,12 +87,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'OMatKo.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+DATABASES = {} 
+DATABASES ['default'] = dj_database_url.config (conn_max_age = 600)
 
 AUTH_PASSWORD_VALIDATORS = [
     # {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
@@ -82,6 +103,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'build/static'),
@@ -114,3 +136,5 @@ LOGOUT_ON_PASSWORD_CHANGE = False
 
 
 django_heroku.settings(locals())
+if not ENV:
+    del DATABASES['default']['OPTIONS']['sslmode']
