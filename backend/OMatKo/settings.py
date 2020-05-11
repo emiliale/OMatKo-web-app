@@ -5,7 +5,7 @@ import dotenv
 
 dotenv_file = os.path.join (BASE_DIR, ".env") 
 if os.path.isfile (dotenv_file): 
-    dotenv.load_dotenv (plik_en)
+    dotenv.load_dotenv (en_file)
 SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
 DEBUG = True
 ALLOWED_HOSTS = []
