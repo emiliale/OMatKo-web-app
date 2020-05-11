@@ -1,7 +1,11 @@
 import os
 import django_heroku
+import dj_database_url 
+import dotenv
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+dotenv_file = os.path.join (BASE_DIR, ".env") 
+if os.path.isfile (plik_ dotenv): 
+    dotenv.load_dotenv (plik_en)
 SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
 DEBUG = True
 ALLOWED_HOSTS = []
