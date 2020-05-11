@@ -28,9 +28,6 @@ else:
 
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
-print(DATABASES)
-
-
 SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
 DEBUG = True
 ALLOWED_HOSTS = []
@@ -142,4 +139,3 @@ LOGOUT_ON_PASSWORD_CHANGE = False
 django_heroku.settings(locals())
 if not ENV:
     del DATABASES['default']['OPTIONS']['sslmode']
-print(DATABASES)
