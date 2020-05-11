@@ -22,9 +22,9 @@ if ENV:
         }
     }
 else:
-    
-DATABASES = DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+    DATABASES = {}
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
 print(DATABASES)
 
 
