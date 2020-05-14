@@ -9,6 +9,7 @@ import ChangePassword from "./containers/ChangePassword";
 import Main from "./containers/Main";
 import Vote from "./containers/Vote";
 import RateList from "./containers/RateListView";
+import SchedulerController from "./containers/schedule/SchedulerController";
 
 
 const BaseRouter = () => (
@@ -21,6 +22,7 @@ const BaseRouter = () => (
     <Route exact path="/main/" component={Main} />{" "}
     <Route exact path="/vote/" component={Vote} />{" "}
     <Route exact path="/rate/" component={RateList} />{" "}
+    <Route exact path="/schedule/" component={SchedulerController} />{" "}
 
   </div>
 );
