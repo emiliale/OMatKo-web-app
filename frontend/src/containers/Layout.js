@@ -63,7 +63,7 @@ class CustomLayout extends React.Component {
                         <Link to="/main">Strona główna</Link>
                     </Menu.Item>
 
-                    <Menu.Item key="7">
+                    <Menu.Item key="4">
                         <Link to="/schedule">Harmonogram</Link>
                     </Menu.Item>
 
