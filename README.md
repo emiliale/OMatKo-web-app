@@ -4,6 +4,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Deployment](#deploy)
 * [Documenation](#doc)
 
 ## General info
@@ -13,6 +14,7 @@ This project is simple web app, which is created on course "Advanced Web Technol
 Project is created with:
 * Django
 * React
+*PostgreSQL
 
 ## Setup
 Run the following commands to get started:
@@ -26,6 +28,9 @@ Run the following commands to get started:
 1. cd frontend
 2. npm i
 3. npm start
+
+## Deployment
+You can see this app on: https://omatko-app-web.herokuapp.com
 
 ## Documentation
 Several screenshots showing how the application works:
@@ -48,18 +53,26 @@ Error handling:
 
 ### News feed
 On the next page you will find news:
+
 ![Some News](./images/news.PNG)
 
 ### Voting page
 When you log in, you can vote for lecture.
+
 ![Voting page](./images/voting_page.png)
 
 Please send your vote to us!
+
 ![Vote](./images/vote.png)
 
-You can check your votes, edit or delete them
+You can check your votes...
+
 ![Vote](./images/voteList.png)
 
-Change your rates!
+...edit or delete them...
 
 ![Vote](./images/editVote.png)
+
+### Timetable
+Here you can find the event schedule.
+![Schedule](./images/timetable.png)
