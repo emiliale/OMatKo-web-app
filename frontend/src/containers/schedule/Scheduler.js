@@ -12,7 +12,7 @@ class Scheduler extends Component {
         this.state = {
             startDate: "2020-05-10",
             viewType: "Days",
-            days: 4,
+            days: 3,
             dayBeginsHour: 9,
             dayEndsHour: 20,
             cellHeight: 30,
@@ -20,7 +20,7 @@ class Scheduler extends Component {
             eventMoveHandling: "Disabled",
             timeRangeSelectedHandling: "Disabled",
             onBeforeEventRender: args => {
-                args.data.bubbleHtml = props.type === GENERAL ? "Dodaj do własnego harmonogramu" : "Usuń";
+                //args.data.bubbleHtml = props.type === GENERAL ? "Dodaj do własnego harmonogramu" : "Usuń";
                 args.data.backColor = args.data.backColor || "#93c47d";
                 args.data.barHidden = true;
                 args.data.fontColor = "white";
