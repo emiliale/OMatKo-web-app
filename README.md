@@ -75,4 +75,4 @@ You can check your votes...
 
 ### Timetable
 Here you can find the event schedule.
-![Schedule](./images/timetable.PNG)
+![Schedule](./images/timatable.PNG)
