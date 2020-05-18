@@ -14,7 +14,7 @@ This project is simple web app, which is created on course "Advanced Web Technol
 Project is created with:
 * Django
 * React
-*PostgreSQL
+* PostgreSQL
 
 ## Setup
 Run the following commands to get started:
@@ -75,4 +75,4 @@ You can check your votes...
 
 ### Timetable
 Here you can find the event schedule.
-![Schedule](./images/timetable.png)
+![Schedule](./images/timetable.PNG)
