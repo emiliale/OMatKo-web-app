@@ -10,8 +10,6 @@ const serverUrl =
         : "https://omatko-app-backend.herokuapp.com";
 
 
-
-
 const IconText = ({ type, text }) => (
   <span>
     <Icon
@@ -33,6 +31,8 @@ const handleDelete = (id, event) => {
      Authorization: `Token ${localStorage.getItem('token')}`
    };
    console.log(serverUrl)
+   console.log(env)
+
     axios.delete(`${serverUrl}/apiVote/${voteID}/delete/`)
     .then(res => {
       if (res.status === 204) {
