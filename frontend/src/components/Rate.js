@@ -33,7 +33,7 @@ const handleDelete = (id, event) => {
    console.log(serverUrl)
    console.log(env)
 
-    axios.delete(`https://omatko-app-backend.herokuapp.com/apiVote/${voteID}/delete/`)
+    axios.delete(`${serverUrl}/apiVote/${voteID}/delete/`)
     .then(res => {
       if (res.status === 204) {
         window.location.reload(false);
