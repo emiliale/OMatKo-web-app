@@ -17,7 +17,6 @@ class Event(models.Model):
     lecture_code = models.CharField(
         max_length=20,
         blank=True,
-        primary_key=True
     )
     title = models.CharField(
         max_length=300,

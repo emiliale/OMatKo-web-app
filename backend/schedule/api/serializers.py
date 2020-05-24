@@ -6,4 +6,4 @@ from schedule.models import Event
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-        fields = ('lecture_code', 'title', 'start_date', 'end_date', 'presenter', 'description', 'type')
+        fields = ('id', 'lecture_code', 'title', 'start_date', 'end_date', 'presenter', 'description', 'type')
