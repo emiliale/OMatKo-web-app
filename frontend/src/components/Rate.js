@@ -3,6 +3,12 @@ import { List, Avatar, Icon, Button } from "antd";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 
+const env = process.env.NODE_ENV || "development";
+const serverUrl =
+    env === "development"
+        ? "http://127.0.0.1:8000"
+        : "https://omatko-app-backend.herokuapp.com";
+
 const IconText = ({ type, text }) => (
   <span>
     <Icon
@@ -23,7 +29,7 @@ const handleDelete = (id, event) => {
      "Content-Type": "application/json",
      Authorization: `Token ${localStorage.getItem('token')}`
    };
-    axios.delete(`http://127.0.0.1:8000/apiVote/${voteID}/delete/`)
+    axios.delete(`${serverUrl}/apiVote/${voteID}/delete/`)
     .then(res => {
       if (res.status === 204) {
         window.location.reload(false);
