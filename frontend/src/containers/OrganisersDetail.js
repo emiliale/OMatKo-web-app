@@ -10,24 +10,24 @@ const serverUrl =
         : "https://omatko-app-backend.herokuapp.com";
 
 
-class SponsorsDetail extends React.Component {
+class OrganisersDetail extends React.Component {
   state = {
-    sponsor: {}
+    organiser: {}
   };
 
   componentDidMount() {
     const sponsorID = this.props.match.params.sponsorID;
-    axios.get(`${serverUrl}/apiSponsor/${id}`).then(res => {
+    axios.get(`${serverUrl}/apiOrganizer/${id}`).then(res => {
       this.setState({
-        sponsor: res.data
+        organizer: res.data
       });
     });
   }
 
   render() {
     return (
-        <Card title={this.state.sponsor.sponsor_name}>
-          <p> {this.state.sponsor.description} </p>
+        <Card title={this.state.organizer.surname}>
+          <p> {this.state.organizer.first_name} </p>
         </Card>
     );
   }
@@ -39,4 +39,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(SponsorsDetail);
+export default connect(mapStateToProps)(OrganisersDetail);

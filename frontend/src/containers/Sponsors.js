@@ -12,26 +12,26 @@ const serverUrl =
 
 class Sponsors extends React.Component {
   state = {
-    sponsorss: []
+    sponsor: []
   };
 
   fetchSponsors = () => {
     axios.get(`${serverUrl}/apiSponsor/`).then(res => {
       this.setState({
-        sponsors: res.data
+        sponsor: res.data
       });
     });
   }
 
   componentDidMount() {
-    this.fetchSponsors();
+    this.fetchSponsor();
   }
 
 
   render() {
     return (
       <div>
-        <Sponsors data={this.state.Sponsors} /> <br />
+        <Sponsors data={this.state.Sponsor} /> <br />
       </div>
     );
   }
