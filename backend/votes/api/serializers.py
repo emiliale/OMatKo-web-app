@@ -8,7 +8,7 @@ class VoteSerializer(serializers.ModelSerializer):
     userName = serializers.ReadOnlyField(source='user.username')
     class Meta:
         model = Vote
-        fields = ['userName', 'id','lecture', 'content_vote', 'presentation_vote']
+        fields = ['userName', 'lecture', 'content_vote', 'presentation_vote']
 
 
 class UserSerializer(serializers.ModelSerializer):
