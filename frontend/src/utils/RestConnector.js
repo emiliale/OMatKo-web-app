@@ -25,7 +25,7 @@ const parseEvents = data => {
     const events = []
     data.forEach(event => {
         var parsedEvent = {
-            id: event.id,
+            id: event.lecture_code,
             html: createHtmlForEvent(event),
             start: event.start_date,
             end: event.end_date,
