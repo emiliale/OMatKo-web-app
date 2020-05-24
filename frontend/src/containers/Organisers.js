@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import Articles from "../components/Article";
 import CustomForm from "../components/Form";
-import Card from "antd"
+import Card from "antd";
 
 const env = process.env.NODE_ENV || "development";
 const serverUrl =
