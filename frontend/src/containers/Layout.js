@@ -67,6 +67,14 @@ class CustomLayout extends React.Component {
                         <Link to="/schedule">Harmonogram</Link>
                     </Menu.Item>
 
+                    <Menu.Item key="8">
+                        <Link to="/organisers">Organizatorzy</Link>
+                    </Menu.Item>
+
+                    <Menu.Item key="9">
+                        <Link to="/sponsors">Partnerzy</Link>
+                    </Menu.Item>
+
 
                 </Menu>
                 </Header>
