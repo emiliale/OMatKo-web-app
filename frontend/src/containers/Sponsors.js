@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Articles from "../components/Article";
 import CustomForm from "../components/Form";
+import Card from "antd"
 
 const env = process.env.NODE_ENV || "development";
 const serverUrl =
@@ -31,7 +32,9 @@ class Sponsors extends React.Component {
   render() {
     return (
       <div>
-        <Sponsors data={this.state.Sponsor} /> <br />
+        <Card title={this.state.sponsor.sponsor_name}>
+          <p> {this.state.sponsor.description} </p>
+        </Card>
       </div>
     );
   }
