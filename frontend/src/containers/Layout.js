@@ -22,8 +22,8 @@ class CustomLayout extends React.Component {
                     style={{ lineHeight: '64px', backgroundColor: "#ffffff"}}
                 >
 
-                <Menu.Item key="8">
-                <Link to="/">
+                <Menu.Item key="3">
+                <Link to="/main">
                     <img
                     width={200}
                     alt="logo"
@@ -57,10 +57,6 @@ class CustomLayout extends React.Component {
 
                     <Menu.Item key="2">
                         <Link to="/">Aktualności</Link>
-                    </Menu.Item>
-
-                    <Menu.Item key="3">
-                        <Link to="/main">Strona główna</Link>
                     </Menu.Item>
 
                     <Menu.Item key="7">
