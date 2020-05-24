@@ -1,6 +1,6 @@
 import os
 import django_heroku
-import dj_database_url 
+import dj_database_url
 import dotenv
 
 
@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'articles',
     'schedule',
     'votes',
+    'organizer',
+    'sponsor',
 
 ]
 
