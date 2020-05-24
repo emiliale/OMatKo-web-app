@@ -30,8 +30,6 @@ const handleDelete = (id, event) => {
      "Content-Type": "application/json",
      Authorization: `Token ${localStorage.getItem('token')}`
    };
-   console.log(serverUrl)
-   console.log(env)
 
     axios.delete(`${serverUrl}/apiVote/${voteID}/delete/`)
     .then(res => {
