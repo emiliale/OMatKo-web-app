@@ -61,5 +61,5 @@ const parseEvents = data => {
 }
 
 const createHtmlForEvent = event => {
-    return ("<div><b style='font-size: 16px'>"+event.title+"</b><br/>"+event.description+"<br/>"+event.presenter+"</div>")
+  return ("<div><b style='font-size: 16px'>"+event.title+"</b><br/>"+event.presenter+"</div>")
 }
