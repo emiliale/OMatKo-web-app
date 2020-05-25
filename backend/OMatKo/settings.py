@@ -29,7 +29,7 @@ else:
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = []
 
 
