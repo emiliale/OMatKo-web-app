@@ -22,8 +22,8 @@ class CustomLayout extends React.Component {
                     style={{ lineHeight: '64px', backgroundColor: "#ffffff"}}
                 >
 
-                <Menu.Item key="3">
-                <Link to="/main">
+                <Menu.Item key="8">
+                <Link to="/">
                     <img
                     width={200}
                     alt="logo"
@@ -59,16 +59,16 @@ class CustomLayout extends React.Component {
                         <Link to="/">Aktualności</Link>
                     </Menu.Item>
 
-                    <Menu.Item key="7">
+                    <Menu.Item key="3">
+                        <Link to="/main">Strona główna</Link>
+                    </Menu.Item>
+
+                    <Menu.Item key="4">
                         <Link to="/schedule">Harmonogram</Link>
                     </Menu.Item>
 
-                    <Menu.Item key="8">
-                        <Link to="/organisers">Organizatorzy</Link>
-                    </Menu.Item>
-
-                    <Menu.Item key="9">
-                        <Link to="/sponsors">Partnerzy</Link>
+                    <Menu.Item key="5">
+                        <Link to="/contact">Kontakt</Link>
                     </Menu.Item>
 
 
@@ -77,7 +77,7 @@ class CustomLayout extends React.Component {
                 <Content style={{ padding: '0 50px' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item><Link to="/main">Strona Główna</Link></Breadcrumb.Item>
-                    <Breadcrumb.Item>Tutaj</Breadcrumb.Item>
+                    <Breadcrumb.Item><Link to="/">Aktualności</Link></Breadcrumb.Item>
                 </Breadcrumb>
                     <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
                         {this.props.children}

@@ -2,12 +2,21 @@ import {DayPilot} from "daypilot-pro-react";
 import axios from "axios";
 import React from 'react';
 
+
 const env = process.env.NODE_ENV || "development";
 const serverUrl =
     env === "development"
         ? "http://127.0.0.1:8000"
         : "https://omatko-app-backend.herokuapp.com";
 
+
+export const sendContact = (title, content, email) => {
+     return axios.post(`${serverUrl}/contact/`, {
+        subject: title,
+        message: content,
+        email
+    })
+}
 
 export const getAllEvents = (callback) => {
 
@@ -45,6 +54,11 @@ export const getAllEvents = (callback) => {
 
 const parseEvents = data => {
     const events = []
+    const typeToColorMap = {
+        TEO: "#93c47d",
+        APP: "#125284",
+        OTHER: "#38761d"
+    }
     data.forEach(event => {
         var parsedEvent = {
             id: event.lecture_code,
@@ -53,7 +67,7 @@ const parseEvents = data => {
             end: event.end_date,
             barColor: "#38761d",
             barBackColor: "#93c47d",
-            //backColor: event.id_potoku === 1 ? "#515161" : "#125284"
+            backColor: typeToColorMap[event.type]
         }
         events.push(parsedEvent)
     })
@@ -61,5 +75,5 @@ const parseEvents = data => {
 }
 
 const createHtmlForEvent = event => {
-  return ("<div><b style='font-size: 16px'>"+event.title+"</b><br/>"+event.presenter+"</div>")
+    return ("<div><b style='font-size: 16px'>" + event.title + "</b><br/>" + event.presenter + "</div>")
 }
