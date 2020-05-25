@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Organisers from "../components/Organiser";
+import Organizers from "../components/Organiser";
 
 
 const env = process.env.NODE_ENV || "development";
