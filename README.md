@@ -76,3 +76,11 @@ You can check your votes...
 ### Timetable
 Here you can find the event schedule.
 ![Schedule](./images/timatable.PNG)
+
+### Sponsors
+Here you can find companies that support us.
+![Sponsors](./images/sponsors.PNG)
+
+### Organisers
+Here you can find organisers.
+![organisers](./images/organisers.PNG)
