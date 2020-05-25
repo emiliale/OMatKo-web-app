@@ -2,7 +2,6 @@ import {DayPilot} from "daypilot-pro-react";
 import axios from "axios";
 import React from 'react';
 
-
 const env = process.env.NODE_ENV || "development";
 const serverUrl =
     env === "development"
@@ -13,7 +12,7 @@ const serverUrl =
 export const getAllEvents = (callback) => {
 
 
-    axios.get(serverUrl + "/apiEvent/").then(res => {
+    axios.get(`${serverUrl}/apiEvent/`).then(res => {
         callback(parseEvents(res.data))
 
 
