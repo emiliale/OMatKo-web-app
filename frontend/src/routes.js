@@ -26,8 +26,8 @@ const BaseRouter = () => (
     <Route exact path="/vote/" component={Vote} />{" "}
     <Route exact path="/rate/" component={RateList} />{" "}
     <Route exact path="/schedule/" component={SchedulerController} />{" "}
-    <Route exact path="/sponsors" component = {SponsorList} />{" "}
-    <Route exact path="/organisers" component = {OrganizerList} />{" "}
+    <Route exact path="/sponsors/" component = {SponsorList} />{" "}
+    <Route exact path="/organisers/" component = {OrganizerList} />{" "}
   </div>
 );
 
