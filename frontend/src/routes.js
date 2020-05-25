@@ -12,6 +12,7 @@ import RateList from "./containers/RateListView";
 import SchedulerController from "./containers/schedule/SchedulerController";
 import Sponsors from "./containers/Sponsors";
 import Organisers from "./containers/Organisers";
+import OrganizerList from "./containers/OrganisersDetail";
 
 
 const BaseRouter = () => (
@@ -25,8 +26,8 @@ const BaseRouter = () => (
     <Route exact path="/vote/" component={Vote} />{" "}
     <Route exact path="/rate/" component={RateList} />{" "}
     <Route exact path="/schedule/" component={SchedulerController} />{" "}
-    <Route exact path="/sponsors" component = {SponsorsDetail} />{" "}
-    <Route exact path="/organisers" component = {OrganisersDetail} />{" "}
+    <Route exact path="/sponsors" component = {SponsorList} />{" "}
+    <Route exact path="/organisers" component = {OrganizerList} />{" "}
   </div>
 );
 
