@@ -5,17 +5,17 @@ import { List, Avatar, Icon } from "antd";
 import { Row, Col } from 'antd';
 const { Meta } = Card;
 
-const Organisers = props => {
+const Sponsors = props => {
   return (
     <List
       dataSource={props.data}
       renderItem={item => (
         <Card
-          key={item.surname}
+          key={item.sponsor_name}
         >
           <Meta
-            title={item.surname + " " + item.first_name}
-            avatar={<Avatar src={item.first_name} />}
+            title={<a href={`/sponsor/${item.id}`}> {item.sponsor_name} </a>}
+            avatar={<Avatar src={item.logo} />}
             description={item.description}
           />
           {item.content}
@@ -25,4 +25,4 @@ const Organisers = props => {
   );
 };
 
-export default Organisers;
+export default Sponsors;
