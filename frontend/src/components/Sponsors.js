@@ -1,12 +1,18 @@
 import React from "react";
 import axios from "axios";
 import { Button, Card } from "antd";
-import { List, Avatar, Icon } from "antd";
+import { List, Avatar, Icon, Typography } from "antd";
 import { Row, Col } from 'antd';
+
 const { Meta } = Card;
+
+const { Title, Paragraph, Text } = Typography;
 
 const Sponsors = props => {
   return (
+    <Typography>
+      <Title>Firmy wspierające naszą konferencję!</Title>
+      <Paragraph>Bez was nie dalibyśmy rady...</Paragraph>
     <List
       dataSource={props.data}
       renderItem={item => (
@@ -14,7 +20,7 @@ const Sponsors = props => {
           key={item.sponsor_name}
         >
           <Meta
-            title={<a href={`/sponsor/${item.id}`}> {item.sponsor_name} </a>}
+            title= {item.sponsor_name}
             avatar={<Avatar src={item.logo} />}
             description={item.description}
           />
@@ -22,7 +28,8 @@ const Sponsors = props => {
         </Card>
       )}
     />
-  );
+    </Typography>
+  )
 };
 
 export default Sponsors;
