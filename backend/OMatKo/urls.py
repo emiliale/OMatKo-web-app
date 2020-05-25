@@ -13,6 +13,7 @@ urlpatterns = [
     path('apiOrganizer/', include('organizer.api.urls')),
     path('apiSponsor/', include('sponsor.api.urls')),
     path('admin/', admin.site.urls),
+    path('contact/', include('contact.urls')),
     re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
 
 ]
