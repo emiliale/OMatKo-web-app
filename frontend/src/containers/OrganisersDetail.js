@@ -1,8 +1,7 @@
 import React from "react";
 import axios from "axios";
-import { connect } from "react-redux";
-import { Button, Card } from "antd";
-import Organisers from "./Organisers";
+import Organisers from "../components/Organiser";
+
 
 const env = process.env.NODE_ENV || "development";
 const serverUrl =
@@ -10,38 +9,31 @@ const serverUrl =
         ? "http://127.0.0.1:8000"
         : "https://omatko-app-backend.herokuapp.com";
 
+class OrganizerList extends React.Component {
+  state = {
+    organizers: []
+  };
 
-class OrganisersDetail extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-          organizers: []
-    }
-
-}
-
-  componentDidMount() {
-    const sponsorID = this.props.match.params.sponsorID;
-    axios.get(`${serverUrl}/apiOrganizer/${id}`).then(res => {
+  fetchOrganizers = () => {
+    axios.get(`${serverUrl}/apiOrganizer/`).then(res => {
       this.setState({
         organizers: res.data
       });
     });
   }
 
+  componentDidMount() {
+    this.fetchOrganizers();
+  }
+
+
   render() {
     return (
-        <Card title={this.state.organizer.surname}>
-          <p> {this.state.organizer.first_name} </p>
-        </Card>
+      <div>
+        <Organizers data={this.state.organizers} /> <br />
+      </div>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    token: state.token
-  };
-};
-
-export default connect(mapStateToProps)(OrganisersDetail);
+export default OrganizerList;
