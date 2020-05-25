@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Articles from "../components/Article";
-import CustomForm from "../components/Form";
+
 import { Button, Card } from "antd";
 
 const env = process.env.NODE_ENV || "development";
@@ -13,27 +12,27 @@ const serverUrl =
 
 class Organisers extends React.Component {
   state = {
-    organiser: []
+    organizers: []
   };
 
   fetchSponsors = () => {
-    axios.get(`${serverUrl}/api/organizer/`).then(res => {
+    axios.get(`${serverUrl}/apiOrganizer/`).then(res => {
       this.setState({
-        organiser: res.data
+        organizers: res.data
       });
     });
   }
 
   componentDidMount() {
-    this.fetchOrganiser();
+    this.fetchOrganizers();
   }
 
 
   render() {
     return (
       <div>
-        <Card title={this.state.organiser.surname}>
-          <p> {this.state.organiser.first_name} </p>
+        <Card title={this.state.organizers.surname}>
+          <p> {this.state.organizers.first_name} </p>
         </Card>
       </div>
     );

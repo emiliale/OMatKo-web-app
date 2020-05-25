@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { Button, Card } from "antd";
+import Organisers from "./Organisers";
 
 const env = process.env.NODE_ENV || "development";
 const serverUrl =
@@ -11,15 +12,19 @@ const serverUrl =
 
 
 class OrganisersDetail extends React.Component {
-  state = {
-    organiser: {}
-  };
+    constructor(props) {
+      super(props);
+      this.state = {
+          organizers: []
+    }
+
+}
 
   componentDidMount() {
     const sponsorID = this.props.match.params.sponsorID;
     axios.get(`${serverUrl}/apiOrganizer/${id}`).then(res => {
       this.setState({
-        organizer: res.data
+        organizers: res.data
       });
     });
   }
