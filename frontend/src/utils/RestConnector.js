@@ -31,7 +31,7 @@ const parseEvents = data => {
             end: event.end_date,
             barColor: "#38761d",
             barBackColor: "#93c47d",
-            backColor: event.id_potoku === 1 ? "#515161" : "#125284"
+            //backColor: event.id_potoku === 1 ? "#515161" : "#125284"
         }
         events.push(parsedEvent)
     })
