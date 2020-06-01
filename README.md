@@ -87,4 +87,4 @@ Here you can find organisers.
 
 ### Contact
 If you have any questions, please don't hesitate to contact us!
-![contact](./images/contact.PNG)
+![contact](./images/contact.png)
