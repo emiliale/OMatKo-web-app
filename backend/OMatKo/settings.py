@@ -6,25 +6,14 @@ import dotenv
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-DOTENV_FILE = os.path.join(BASE_DIR, ".env")
-ENV = False
 
-if os.path.isfile(DOTENV_FILE):
-    ENV = True
-if ENV:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': dotenv.get_key(DOTENV_FILE, 'DB_NAME'),
-            'USER': dotenv.get_key(DOTENV_FILE, 'DB_USER'),
-            'PASSWORD': dotenv.get_key(DOTENV_FILE, 'DB_PASSWORD'),
-            'HOST': dotenv.get_key(DOTENV_FILE, 'DB_HOST'),
-            'PORT': dotenv.get_key(DOTENV_FILE, 'DB_PORT')
-        }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-else:
-    DATABASES = {}
-
+}
 
 
 EMAIL_HOST = 'smtp.gmail.com'
@@ -34,7 +23,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
 
 SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
 DEBUG = True
@@ -149,5 +138,4 @@ LOGOUT_ON_PASSWORD_CHANGE = False
 
 
 django_heroku.settings(locals())
-if not ENV:
-    del DATABASES['default']['OPTIONS']['sslmode']
+

@@ -20,7 +20,7 @@ const Sponsors = props => {
           key={item.sponsor_name}
         >
           <Meta
-            title= {item.sponsor_name}
+            title={<a href={`/sponsors/${item.id}`}> {item.sponsor_name} </a>}
             avatar={<Avatar src={item.logo} />}
             description={item.description}
           />

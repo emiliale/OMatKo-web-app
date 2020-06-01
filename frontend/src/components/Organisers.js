@@ -1,8 +1,6 @@
 import React from "react";
-import axios from "axios";
 import { Button, Card } from "antd";
 import { List, Avatar, Icon, Typography } from "antd";
-import { Row, Col } from 'antd';
 
 const { Meta } = Card;
 const { Title, Paragraph, Text } = Typography;
@@ -19,7 +17,7 @@ const Organisers = props => {
           key={item.surname}
         >
           <Meta
-            title={item.surname + " " + item.first_name}
+            title={<a href={`/organisers/${item.id}`}> {item.surname + " " + item.first_name} </a>}
             avatar={<Avatar src={item.first_name} />}
             description={item.description}
           />

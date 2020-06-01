@@ -1,10 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { connect } from "react-redux";
-import { Button, Card } from "antd";
-import Organisers from "../components/Organisers";
-
-        
+import Organisers from "../components/Organisers";   
         
 const env = process.env.NODE_ENV || "development";
 const serverUrl =
