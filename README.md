@@ -84,3 +84,7 @@ Here you can find companies that support us.
 ### Organisers
 Here you can find organisers.
 ![organisers](./images/organisers.PNG)
+
+### Contact
+If you have any questions, please don't hesitate to contact us!
+![contact](./images/contact.PNG)
