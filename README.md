@@ -78,13 +78,20 @@ Here you can find the event schedule.
 ![Schedule](./images/timatable.PNG)
 
 ### Sponsors
-Here you can find companies that support us.
+Here you can find companies that support us...
 ![Sponsors](./images/sponsors.PNG)
+...and you can see details.
+![Sponsors_detail](./images/sponsor_detail.jpg)
 
 ### Organisers
-Here you can find organisers.
+Here you can find organisers...
 ![organisers](./images/organisers.PNG)
+...and get to know each other better.
+![organisers_detail](./images/organiser_detail.jpg)
 
 ### Contact
 If you have any questions, please don't hesitate to contact us!
 ![contact](./images/contact.png)
+
+
+
