@@ -12,26 +12,37 @@ const serverUrl =
 
 class RateList extends React.Component {
   state = {
-    articles: []
+    votes: [],
+    events: []
   };
 
   fetchRates = () => {
-    axios.get(`${serverUrl}/apiVote/`).then(res => {
-      this.setState({
-        rates: res.data
-      });
-    });
+
+    const getVotes = axios.get(`${serverUrl}/apiVote/`)
+    const getEvents = axios.get(`${serverUrl}/apiEvent/`)
+    axios.all([getVotes, getEvents]).then(
+      axios.spread((...responses) => {
+        const allDataVote = responses[0]
+        const allDataEvents = responses[1];
+
+        this.setState({
+          votes: allDataVote.data,
+          events: allDataEvents.data
+      })
+      })
+    )
   }
 
   componentDidMount() {
-    this.fetchRates();
+    this.fetchRates();    
   }
 
 
   render() {
+
     return (
       <div>
-        <Rates data={this.state.rates} /> <br />
+        <Rates votes={this.state.votes} events={this.state.events} /> <br />
       </div>
     );
   }

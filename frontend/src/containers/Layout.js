@@ -50,7 +50,7 @@ class CustomLayout extends React.Component {
                       </SubMenu>
                     :
 
-                    <Menu.Item key="1">
+                    <Menu.Item  style={{float: 'right'}} key="1" >
                         <Link to="/login">Zaloguj się</Link>
                     </Menu.Item>
                 }
@@ -78,7 +78,7 @@ class CustomLayout extends React.Component {
 
                 </Menu>
                 </Header>
-                <Content style={{ padding: '0 50px' }}>
+                <Content   style={{ paddingRight: '10%', paddingLeft: '10%' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item><Link to="/main">Strona Główna</Link></Breadcrumb.Item>
                     <Breadcrumb.Item>Tutaj</Breadcrumb.Item>

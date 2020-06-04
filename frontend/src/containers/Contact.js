@@ -32,17 +32,16 @@ class Contact extends Component {
     render() {
         const {title, content, email} = this.state
         return (
-            <div>
-
-                <label>tytuł:</label>
+            <div style={{ paddingRight: '10%', paddingLeft: '10%' }}>
+                <label>Tytuł:</label>
                 <Input name="title" onChange={this.onChange} value={title}/>
                 <br/>
                 <br/>
-                <label>treść:</label>
+                <label>Treść:</label>
                 <TextArea name="content" onChange={this.onChange} value={content}/>
                 <br/>
                 <br/>
-                <label>email:</label>
+                <label>Email:</label>
                 <Input name="email" onChange={this.onChange} value={email}/>
                 <br/>
                 <br/>

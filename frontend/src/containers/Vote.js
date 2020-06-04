@@ -37,11 +37,12 @@ class RegistrationForm extends React.Component {
     const { getFieldDecorator } = this.props.form;
 
     return (
+      <div style={{ paddingRight: '10%', paddingLeft: '35%' }}>
       <Form onSubmit={this.handleSubmit}>
 
-        <FormItem  label="Kod prelekcji" rules={[{ required: true }]}>
+        <FormItem  style={{width:'52%'}} label="Kod prelekcji" rules={[{ required: true }]}>
             {getFieldDecorator('code')(
-                <Input placeholder="Kod wykładu"/>
+                <Input placeholder="Kod prelekcji"/>
             )}
         </FormItem>
 
@@ -59,15 +60,16 @@ class RegistrationForm extends React.Component {
                 <span className="rate_presentation">Ocena za prezentację</span>
             </FormItem>
         <FormItem>
-        <Button type="primary" htmlType="submit" style={{marginRight: '10px'}}>
+        <Button type="primary" htmlType="submit">
             Zapisz
               </Button>
-        <Button type="default"  htmlType="submit" style={{marginTop: "4px", float: "right"}}>
+        <Button type="default"  htmlType="submit" style={{marginLeft: '2%'}}>
           <Link to="/rate">Wyświetl już oddane głosy</Link>
         </Button>
         </FormItem>
 
       </Form>
+      </div>
     );
   }
 }

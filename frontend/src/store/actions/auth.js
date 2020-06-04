@@ -59,14 +59,13 @@ export const authLogin = (username, password) => {
             localStorage.setItem('token', token);
             localStorage.setItem('username', usrname);
             localStorage.setItem('expirationDate', expirationDate);
+            window.location.replace('/')
             dispatch(authSuccess(token));
             dispatch(checkAuthTimeout(3600));
         })
         .catch(err => {
-          console.log(err);
           if(err == "Error: Request failed with status code 400"){
-            console.log(err);
-            window.alert("Niepoprawny login lub hasło");
+            err.message = "Niepoprawny login lub hasło";
           }
             dispatch(authFail(err))
         })
@@ -89,6 +88,7 @@ export const authChangePassword = ( newpassword, confirm, password) => {
             const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
             localStorage.setItem('token', token);
             localStorage.setItem('expirationDate', expirationDate);
+            window.location.replace('/')
             dispatch(authSuccess(token));
             dispatch(checkAuthTimeout(3600));
         })

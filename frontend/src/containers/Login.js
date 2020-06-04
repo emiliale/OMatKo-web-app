@@ -6,14 +6,12 @@ import * as actions from '../store/actions/auth';
 const FormItem = Form.Item;
 const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
 
-
 class NormalLoginForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
         this.props.onAuth(values.userName, values.password);
-        this.props.history.push('/');
       }
     });
   }
@@ -28,7 +26,7 @@ class NormalLoginForm extends React.Component {
 
     const { getFieldDecorator } = this.props.form;
     return (
-        <div>
+        <div style={{ paddingRight: '30%', paddingLeft: '30%', paddingTop: '3%' }}>
             {errorMessage}
             {
                 this.props.loading ?

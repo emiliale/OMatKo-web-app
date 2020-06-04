@@ -19,6 +19,7 @@ class RegistrationForm extends React.Component {
             values.confirm,
             values.oldPassword
         );
+        console.log(values)
         this.props.history.push('/');
       }
     });
@@ -68,6 +69,7 @@ class RegistrationForm extends React.Component {
     const { getFieldDecorator } = this.props.form;
 
     return (
+      <div style={{ paddingRight: '30%', paddingLeft: '30%' }}>
       <Form onSubmit={this.handleSubmit}>
 
         <FormItem>
@@ -111,6 +113,8 @@ class RegistrationForm extends React.Component {
         </FormItem>
 
       </Form>
+      </div>
+
     );
   }
 }

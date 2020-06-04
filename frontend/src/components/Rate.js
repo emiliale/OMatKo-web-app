@@ -10,6 +10,8 @@ const serverUrl =
         : "https://omatko-app-backend.herokuapp.com";
 
 
+
+
 const IconText = ({ type, text }) => (
   <span>
     <Icon
@@ -30,7 +32,7 @@ const handleDelete = (id, event) => {
      "Content-Type": "application/json",
      Authorization: `Token ${localStorage.getItem('token')}`
    };
-
+   console.log(env)
     axios.delete(`${serverUrl}/apiVote/${voteID}/delete/`)
     .then(res => {
       if (res.status === 204) {
@@ -42,11 +44,19 @@ const handleDelete = (id, event) => {
 const username = localStorage.getItem('username');
 
 const filterData = () => {
-    if(props.data){
-      var filtered = props.data.filter(vote => vote.userName == username);
+    if(props.votes){
+      var filtered = props.votes.filter(vote => vote.userName == username);
       return filtered;
     }
     return [];
+  }
+
+  const getEventName = (lecture) => {
+    if(props.events){
+      var filtered = props.events.filter(event => event.lecture_code == lecture);
+      return filtered[0].title;
+    }
+    return lecture;
   }
 
   return (
@@ -69,7 +79,7 @@ const filterData = () => {
             <Button type='danger' onClick={handleDelete.bind(this, item.id)}><Icon type="delete" style={{ color: 'rgba(0,0,0,F)' }} /></Button>
             </div>
           }
-          title={<a href={`/rate/${item.id}`}><p>Kod: {item.lecture}</p></a>}
+          title={<a href={`/rate/${item.id}`}><p>{getEventName(item.lecture)}</p></a>}
           description={<ul><li>Ocena merytoryczna: {item.content_vote}</li>
                         <li>Ocena sposoby prezentacji: {item.presentation_vote}</li></ul>}
         />
