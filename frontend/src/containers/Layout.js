@@ -35,7 +35,7 @@ class CustomLayout extends React.Component {
                     this.props.isAuthenticated ?
 
 
-                    <SubMenu
+                    <SubMenu style={{float: 'right'}}
                         key="sub1"
                         title={
                           <span>
@@ -50,7 +50,7 @@ class CustomLayout extends React.Component {
                       </SubMenu>
                     :
 
-                    <Menu.Item  style={{float: 'right'}} key="1" >
+                    <Menu.Item style={{float: 'right'}} key="1"  >
                         <Link to="/login">Zaloguj się</Link>
                     </Menu.Item>
                 }
@@ -78,7 +78,7 @@ class CustomLayout extends React.Component {
 
                 </Menu>
                 </Header>
-                <Content   style={{ paddingRight: '10%', paddingLeft: '10%' }}>
+                <Content style={{ padding: '0 50px' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item><Link to="/main">Strona Główna</Link></Breadcrumb.Item>
                     <Breadcrumb.Item>Tutaj</Breadcrumb.Item>

@@ -111,7 +111,8 @@ export const authVote = ( code, rate_content, rate_presentation) => {
           },{
             headers: { Authorization: "Token " + localStorage.getItem('token')}
           })
-        .then( () => window.alert("Oddano głos"))
+        .then( () =>
+            window.location.replace('/voteApproved'))
         .catch(err => {
                 console.log(err.message);
                 switch (err.message) {
@@ -128,6 +129,7 @@ export const authVote = ( code, rate_content, rate_presentation) => {
                 dispatch(authFail(err))
         })
     }
+
 
 }
 

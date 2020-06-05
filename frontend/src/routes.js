@@ -15,13 +15,15 @@ import SponsorsList from "./containers/SponsorsList";
 import OrganisersList from "./containers/OrganisersList";
 import OrganiserDetail from "./containers/OrganiserDetail";
 import SponsorDetail from "./containers/SponsorDetail";
-
+import VoteApproved from "./containers/VoteApproved";
+import EventDetail from "./containers/EventDetail";
 
 const BaseRouter = () => (
   <div>
     <Route exact path="/" component={ArticleList} />{" "}
     <Route exact path="/articles/:articleID/" component={ArticleDetail} />{" "}
     <Route exact path="/rate/:voteID/" component={RateEdit} />{" "}
+    <Route exact path="/schedule/:eventID/" component={EventDetail} />{" "}
     <Route exact path="/login/" component={Login} />{" "}
     <Route exact path="/password/" component={ChangePassword} />{" "}
     <Route exact path="/main/" component={Main} />{" "}
@@ -33,7 +35,7 @@ const BaseRouter = () => (
     <Route exact path="/organisers/" component = {OrganisersList} />{" "}
     <Route exact path="/organisers/:organizerID/" component={OrganiserDetail} />{" "}
     <Route exact path="/contact/" component={Contact} />{" "}
-
+    <Route exact path="/voteApproved/" component={VoteApproved} />{" "}
   </div>
 );
 

@@ -41,7 +41,7 @@ class RateList extends React.Component {
   render() {
 
     return (
-      <div>
+      <div style={{ paddingRight: '30%', paddingLeft: '30%', paddingTop: '3%' }}>
         <Rates votes={this.state.votes} events={this.state.events} /> <br />
       </div>
     );

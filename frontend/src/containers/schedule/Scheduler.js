@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {DayPilot, DayPilotCalendar} from "daypilot-pro-react";
 import PropTypes from 'prop-types';
+import { Link, withRouter } from 'react-router-dom';
+
 
 export const GENERAL = "GENERAL"
 export const OWN = "OWN"
@@ -12,23 +14,27 @@ class Scheduler extends Component {
         this.state = {
             startDate: "2020-05-10",
             viewType: "Days",
-            days: 3,
+            days: 4,
             dayBeginsHour: 9,
             dayEndsHour: 20,
             cellHeight: 30,
-            eventHoverHandling: "Bubble",
+            eventHoverHandling: "Disabled",
             eventMoveHandling: "Disabled",
             timeRangeSelectedHandling: "Disabled",
             onBeforeEventRender: args => {
-                //args.data.bubbleHtml = props.type === GENERAL ? "Dodaj do własnego harmonogramu" : "Usuń";
+                args.data.Enable = args.e;
                 args.data.backColor = args.data.backColor || "#93c47d";
                 args.data.barHidden = true;
                 args.data.fontColor = "white";
                 args.data.borderColor = "darker";
-
+            },
+            onEventClick: args =>{
+                console.log(this.props)
+                window.location.replace(`/schedule/${args.e.cache.id}`)
             }
         };
     }
+
 
     showDetails(e) {
         DayPilot.Modal.alert(e.data.text);

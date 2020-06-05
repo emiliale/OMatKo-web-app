@@ -49,6 +49,7 @@ class RegistrationForm extends React.Component {
     const { getFieldDecorator } = this.props.form;
 
     return (
+      <div style={{ paddingRight: '30%', paddingLeft: '30%', paddingTop: '3%' }}>
       <Form onSubmit={this.handleSubmit}>
 
       <Card title={`Kod prelekcji: ${this.state.vote.lecture}`}>
@@ -74,6 +75,7 @@ class RegistrationForm extends React.Component {
           </Card>
 
       </Form>
+      </div>
     );
   }
 }
