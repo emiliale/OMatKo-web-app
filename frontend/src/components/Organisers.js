@@ -1,7 +1,7 @@
 import React from "react";
 import { List, Typography, Card, Avatar } from "antd";
 
-const { Meta, Avatar } = Card;
+const { Meta } = Card;
 const { Title, Paragraph } = Typography;
 
 const Organisers = props => {
