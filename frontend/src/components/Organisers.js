@@ -1,8 +1,8 @@
 import React from "react";
-import { List, Typography, Card } from "antd";
+import { List, Typography, Card, Avatar } from "antd";
 
-const { Meta } = Card;
-const { Title, Paragraph, Avatar } = Typography;
+const { Meta, Avatar } = Card;
+const { Title, Paragraph } = Typography;
 
 const Organisers = props => {
   return (
