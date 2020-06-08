@@ -29,10 +29,7 @@ class OrganiserDetail extends React.Component {
     return (
         <Card title={this.state.organizer.first_name +" "+this.state.organizer.surname}
         style={{ width: 300 }}
-        cover={<img 
-                width={100} 
-                alt={this.state.organizer.first_name} 
-                src={this.state.organizer.image} />}>
+        cover={<img width={100}  alt={this.state.organizer.first_name} src={this.state.organizer.image} />}>
           <p> {"Telefon: "+this.state.organizer.phone} </p>
           <p>{"e-mail: "+this.state.organizer.email} </p>
           <p>{this.state.organizer.description} </p>
