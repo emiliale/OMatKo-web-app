@@ -3,6 +3,9 @@ import {Input} from "antd";
 import TextArea from "antd/es/input/TextArea";
 import Button from "antd/es/button";
 import {sendContact} from "../utils/RestConnector";
+import { List, Avatar, Icon, Typography } from "antd";
+
+const { Title, Paragraph, Text } = Typography;
 
 class Contact extends Component {
     constructor() {
@@ -33,6 +36,9 @@ class Contact extends Component {
         const {title, content, email} = this.state
         return (
             <div style={{ paddingRight: '10%', paddingLeft: '10%' }}>
+                <Typography>
+                    <Title>Masz pytania? Chętnie odpowiemy</Title>
+                    <Paragraph>Napisz do nas!</Paragraph>
                 <label>Tytuł:</label>
                 <Input name="title" onChange={this.onChange} value={title}/>
                 <br/>
@@ -46,7 +52,9 @@ class Contact extends Component {
                 <br/>
                 <br/>
                 <Button type="primary" style={{marginRight: '10px'}} onClick={this.sendRequest}>wyślij</Button>
+                </Typography>
             </div>
+
         );
     }
 }

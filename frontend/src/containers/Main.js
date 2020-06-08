@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Typography, Divider } from 'antd';
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph} = Typography;
 
 class Main extends React.Component {
     render(){

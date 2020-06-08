@@ -2,7 +2,9 @@ import React from 'react';
 import { Form, Icon, Input, Button, Spin } from 'antd';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions/auth';
+import { List, Avatar, Typography } from "antd";
 
+const { Title, Paragraph, Text } = Typography;
 const FormItem = Form.Item;
 const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
 
@@ -27,6 +29,9 @@ class NormalLoginForm extends React.Component {
     const { getFieldDecorator } = this.props.form;
     return (
         <div style={{ paddingRight: '30%', paddingLeft: '30%', paddingTop: '3%' }}>
+            <Typography>
+                    <Title>Miło Cię widzieć!</Title>
+                    <Paragraph>Zaloguj się</Paragraph>
             {errorMessage}
             {
                 this.props.loading ?
@@ -60,6 +65,7 @@ class NormalLoginForm extends React.Component {
                     </FormItem>
                 </Form>
             }
+      </Typography>
       </div>
     );
   }

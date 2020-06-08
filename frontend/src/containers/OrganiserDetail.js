@@ -1,9 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import {Card,Avatar } from "antd";
-
-const {Meta} = Card;
+import {Card } from "antd";
 
 const env = process.env.NODE_ENV || "development";
 const serverUrl =
@@ -30,15 +28,15 @@ class OrganiserDetail extends React.Component {
   render() {
     return (
         <Card title={this.state.organizer.first_name +" "+this.state.organizer.surname}
-        cover={<img width={100} alt={this.state.organizer.first_name} src={this.state.organizer.image} />}>
+        style={{ width: 300 }}
+        cover={<img 
+                width={100} 
+                alt={this.state.organizer.first_name} 
+                src={this.state.organizer.image} />}>
           <p> {"Telefon: "+this.state.organizer.phone} </p>
           <p>{"e-mail: "+this.state.organizer.email} </p>
-            <p>{this.state.organizer.description} </p>
-          
-        
-          
+          <p>{this.state.organizer.description} </p>
         </Card>
-        
     );
   }
 }

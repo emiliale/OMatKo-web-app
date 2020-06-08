@@ -1,9 +1,8 @@
 import React from "react";
-import { Button, Card } from "antd";
-import { List, Avatar, Icon, Typography } from "antd";
+import { List, Typography, Card } from "antd";
 
 const { Meta } = Card;
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph, Avatar } = Typography;
 
 const Organisers = props => {
   return (
@@ -18,8 +17,8 @@ const Organisers = props => {
         >
           <Meta
             title={<a href={`/organisers/${item.id}`}> {item.surname + " " + item.first_name} </a>}
-            avatar={<Avatar src={item.first_name} />}
-            description={item.description}
+            avatar={<Avatar src={item.image} />}
+            description={item.email}
           />
           {item.content}
         </Card>
