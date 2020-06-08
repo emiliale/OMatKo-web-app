@@ -27,6 +27,7 @@ class OrganiserDetail extends React.Component {
 
   render() {
     return (
+      <div style={{ paddingRight: '30%', paddingLeft: '30%'}}>
         <Card title={this.state.organizer.first_name +" "+this.state.organizer.surname}
         style={{ width: 300 }}
         cover={<img width={100}  alt={this.state.organizer.first_name} src={this.state.organizer.image} />}>
@@ -34,6 +35,7 @@ class OrganiserDetail extends React.Component {
           <p>{"e-mail: "+this.state.organizer.email} </p>
           <p>{this.state.organizer.description} </p>
         </Card>
+        </div>
     );
   }
 }

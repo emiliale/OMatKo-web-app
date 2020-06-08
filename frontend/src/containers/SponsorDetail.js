@@ -27,11 +27,13 @@ class SponsorDetail extends React.Component {
 
   render() {
     return (
+      <div style={{ paddingRight: '30%', paddingLeft: '30%'}}>
         <Card title={this.state.sponsor.sponsor_name}
         style={{ width: 300 }}
         cover={<img width={100} alt={this.state.sponsor.sponsor_name} src={this.state.sponsor.logo} />}>
           <p> {this.state.sponsor.description} </p>
         </Card>
+        </div>
     );
   }
 }
