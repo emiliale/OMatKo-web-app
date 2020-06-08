@@ -32,7 +32,7 @@ const Articles = props => {
             <img
               width={272}
               alt="logo"
-              src="https://forum.dbaclass.com/wp-content/themes/qaengine/img/default-thumbnail.jpg"
+              src="https://pwr.edu.pl/fcp/4GBUKOQtTKlQhbx08SlkTUhZeUTgtCgg9ACFDC0RFTm9PFRYqCl5tDXdAGHoV/1/public/news_team/rozne/konferencja_matematyczna_omatko.jpg"
             />
           }
         >
