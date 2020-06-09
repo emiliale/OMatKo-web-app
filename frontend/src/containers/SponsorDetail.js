@@ -35,7 +35,7 @@ class SponsorDetail extends React.Component {
         cover={<img width={100} alt={this.state.sponsor.sponsor_name} src={this.state.sponsor.logo} />}>
         </Card>
         </div>
-        <Title>Czego możesz dowiedzieć się o naszym partnerze?</Title>
+        <Title style={{ paddingRight: '5%', paddingLeft: '5%'}}>Czego możesz dowiedzieć się o naszym partnerze?</Title>
         <Paragraph>
         <p>{this.state.sponsor.description} </p>
         </Paragraph>

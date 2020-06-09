@@ -38,7 +38,7 @@ class OrganiserDetail extends React.Component {
         <Paragraph>
         <p>{this.state.organizer.description} </p>
         </Paragraph>
-        <Title>Masz do mnie jakieś pytania?</Title>
+        <Title style={{ paddingRight: '5%', paddingLeft: '5%'}}>Masz do mnie jakieś pytania?</Title>
         <p> {"Telefon: "+this.state.organizer.phone} </p>
         <p>{"e-mail: "+this.state.organizer.email} </p>
         </Typography>
