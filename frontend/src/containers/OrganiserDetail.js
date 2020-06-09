@@ -28,7 +28,7 @@ class OrganiserDetail extends React.Component {
 
   render() {
     return (
-      <Typography style={{ paddingRight: '40%', paddingLeft: '40%'}}>
+      <Typography style={{ paddingRight: '20%', paddingLeft: '20%'}}>
       <div style={{ paddingRight: '40%', paddingLeft: '40%'}}>
         <Card title={this.state.organizer.first_name +" "+this.state.organizer.surname}
         style={{ width: 300 }}
