@@ -14,28 +14,28 @@ class Main extends React.Component {
                 <img
                 alt="logo"
                 src="https://pwr.edu.pl/fcp/4GBUKOQtTKlQhbx08SlkTUhZeUTgtCgg9ACFDC0RFTm9PFRYqCl5tDXdAGHoV/1/public/news_team/rozne/konferencja_matematyczna_omatko.jpg"
-                height={1200}
+                size={100}
                 />
             </div>
             <div>
             <img
                 alt="logo"
                 src="http://prac.im.pwr.edu.pl/~omatko/wp-content/uploads/2019/11/foto-edycja-2019-3.jpg"
-                height={1200}
+                size={100}
                 />
             </div>
             <div>
               <img
                 alt="logo"
                 src="http://prac.im.pwr.edu.pl/~omatko/wp-content/uploads/2019/01/DSC_0932.jpg"
-                height={1200}
+                size={100}
               />
             </div>
             <div>
             <img
                 alt="logo"
                 src="http://prac.im.pwr.edu.pl/~omatko/wp-content/uploads/2019/11/foto-edycja-2019-5.jpg"
-                height={1200}
+                size={100}
               />
             </div>
             </Carousel>
