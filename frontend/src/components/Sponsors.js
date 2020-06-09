@@ -1,8 +1,6 @@
 import React from "react";
-import axios from "axios";
-import { Button, Card } from "antd";
+import { Card } from "antd";
 import { List, Avatar, Icon, Typography } from "antd";
-import { Row, Col } from 'antd';
 
 const { Meta } = Card;
 

@@ -1,31 +1,58 @@
-import React, { Component } from 'react';
-import { Typography, Divider } from 'antd';
+import React from 'react';
+import { Typography, Carousel } from 'antd';
 
 const { Title, Paragraph} = Typography;
 
 class Main extends React.Component {
     render(){
         return(
-        <Typography>
-            <Title>OMatKo!!! 2020</Title>
-            <Paragraph>
-            Ogólnopolska Matematyczna Konferencja Studentów "OMatKo!!!" powstała z inicjatywy studentów matematyki Politechniki Wrocławskiej
-            zrzeszonych w czterech kołach naukowych i przeznaczona jest dla studentów matematyki i kierunków pokrewnych z całego kraju.
-            </Paragraph>
-        
-        <Title>Dlaczego warto być z nami?</Title>
-            <Paragraph>
+          <div style={{ paddingRight: '5%', paddingLeft: '5%'}}>
+          <Typography>
+            <Title style={{ paddingRight: '30%', paddingLeft: '40%', paddingTop: '3%'}}>OMatKo!!! 2020</Title>
+            <Carousel autoplay>
+            <div>
+                <img
+                alt="logo"
+                src="https://pwr.edu.pl/fcp/4GBUKOQtTKlQhbx08SlkTUhZeUTgtCgg9ACFDC0RFTm9PFRYqCl5tDXdAGHoV/1/public/news_team/rozne/konferencja_matematyczna_omatko.jpg"
+                height={1200}
+                />
+            </div>
+            <div>
+            <img
+                alt="logo"
+                src="http://prac.im.pwr.edu.pl/~omatko/wp-content/uploads/2019/11/foto-edycja-2019-3.jpg"
+                height={1200}
+                />
+            </div>
+            <div>
+              <img
+                alt="logo"
+                src="http://prac.im.pwr.edu.pl/~omatko/wp-content/uploads/2019/01/DSC_0932.jpg"
+                height={1200}
+              />
+            </div>
+            <div>
+            <img
+                alt="logo"
+                src="http://prac.im.pwr.edu.pl/~omatko/wp-content/uploads/2019/11/foto-edycja-2019-5.jpg"
+                height={1200}
+              />
+            </div>
+            </Carousel>
+            
+            <Title style={{ paddingRight: '30%', paddingLeft: '30%'}}>
+            Dlaczego warto być z nami?
+            </Title>
+            <Paragraph style={{ paddingRight: '10%', paddingLeft: '10%', paddingTop: '3%'}}>
             Celem konferencji jest rozwój naukowy uczestników poprzez możliwość prezentacji interesujących zagadnień,
             wyników pierwszych badań czy dzielenie się pasją z innymi studentami. Tegoroczna edycja "OMatKo!!!"
             z pewnością będzie źródłem wielu inspiracji oraz przestrzenią do zawiązywania nowych kontaktów między ambitnymi młodymi ludźmi z różnych uczelni >>
-            <Title>Serdecznie zapraszamy!</Title>
+            <Title style={{ paddingRight: '30%', paddingLeft: '30%', paddingTop: '3%'}}>Serdecznie zapraszamy!</Title>
             </Paragraph>
-            <img
-            width={700}
-            alt="logo"
-            src="https://pwr.edu.pl/fcp/4GBUKOQtTKlQhbx08SlkTUhZeUTgtCgg9ACFDC0RFTm9PFRYqCl5tDXdAGHoV/1/public/news_team/rozne/konferencja_matematyczna_omatko.jpg"
-          />
-        </Typography>);
+        </Typography>
+        </div>);
+            
+
   }
 }
 

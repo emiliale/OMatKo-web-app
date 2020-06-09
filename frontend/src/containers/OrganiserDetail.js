@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import {Card } from "antd";
+import {Card, Typography } from "antd";
 
+const { Title, Paragraph} = Typography;
 const env = process.env.NODE_ENV || "development";
 const serverUrl =
     env === "development"
@@ -27,15 +28,20 @@ class OrganiserDetail extends React.Component {
 
   render() {
     return (
+      <Typography style={{ paddingRight: '40%', paddingLeft: '40%'}}>
       <div style={{ paddingRight: '40%', paddingLeft: '40%'}}>
         <Card title={this.state.organizer.first_name +" "+this.state.organizer.surname}
         style={{ width: 300 }}
         cover={<img width={100}  alt={this.state.organizer.first_name} src={this.state.organizer.image} />}>
-          <p> {"Telefon: "+this.state.organizer.phone} </p>
-          <p>{"e-mail: "+this.state.organizer.email} </p>
-          <p>{this.state.organizer.description} </p>
         </Card>
         </div>
+        <Paragraph>
+        <p>{this.state.organizer.description} </p>
+        </Paragraph>
+        <Title>Masz do mnie jakieś pytania?</Title>
+        <p> {"Telefon: "+this.state.organizer.phone} </p>
+        <p>{"e-mail: "+this.state.organizer.email} </p>
+        </Typography>
     );
   }
 }
