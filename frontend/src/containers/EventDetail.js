@@ -1,8 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import { Button, Card } from "antd";
-import CustomForm from "../components/Form";
+import { Card } from "antd";
 import { UserOutlined, CalendarOutlined, KeyOutlined} from '@ant-design/icons';
 
 const env = process.env.NODE_ENV || "development";

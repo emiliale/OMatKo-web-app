@@ -3,9 +3,9 @@ import {Input} from "antd";
 import TextArea from "antd/es/input/TextArea";
 import Button from "antd/es/button";
 import {sendContact} from "../utils/RestConnector";
-import { List, Avatar, Icon, Typography } from "antd";
+import {Typography } from "antd";
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph} = Typography;
 
 class Contact extends Component {
     constructor() {

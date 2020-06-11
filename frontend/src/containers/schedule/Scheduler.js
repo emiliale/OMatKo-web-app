@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
 import {DayPilot, DayPilotCalendar} from "daypilot-pro-react";
 import PropTypes from 'prop-types';
-import { Link, withRouter } from 'react-router-dom';
 
 
 export const GENERAL = "GENERAL"

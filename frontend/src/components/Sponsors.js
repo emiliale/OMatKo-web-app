@@ -1,10 +1,9 @@
 import React from "react";
 import { Card } from "antd";
-import { List, Avatar, Icon, Typography } from "antd";
+import { List, Avatar, Typography } from "antd";
 
 const { Meta } = Card;
-
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph} = Typography;
 
 const Sponsors = props => {
   return (
@@ -20,7 +19,6 @@ const Sponsors = props => {
           <Meta
             title={<a href={`/sponsors/${item.id}`}> {item.sponsor_name} </a>}
             avatar={<Avatar src={item.logo} />}
-            description={item.description}
           />
           {item.content}
         </Card>

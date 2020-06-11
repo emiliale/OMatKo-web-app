@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Scheduler, {GENERAL} from "./Scheduler";
-import {DayPilot} from "daypilot-pro-react";
 import {getAllEvents} from "../../utils/RestConnector";
 
 class SchedulerController extends Component {

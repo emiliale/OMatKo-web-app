@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import Rates from "../components/Rate";
-import CustomForm from "../components/Form";
 
 
 const env = process.env.NODE_ENV || "development";
