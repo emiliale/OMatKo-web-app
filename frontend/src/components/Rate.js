@@ -10,20 +10,6 @@ const serverUrl =
         : "https://omatko-app-backend.herokuapp.com";
 
 
-
-
-const IconText = ({ type, text }) => (
-  <span>
-    <Icon
-      type={type}
-      style={{
-        marginRight: 8
-      }}
-    />
-    {text}
-  </span>
-);
-
 const Rates = props => {
 
 const handleDelete = (id, event) => {
@@ -45,7 +31,7 @@ const username = localStorage.getItem('username');
 
 const filterData = () => {
     if(props.votes){
-      var filtered = props.votes.filter(vote => vote.userName == username);
+      var filtered = props.votes.filter(vote => vote.userName === username);
       return filtered;
     }
     return [];
@@ -53,7 +39,7 @@ const filterData = () => {
 
   const getEventName = (lecture) => {
     if(props.events){
-      var filtered = props.events.filter(event => event.lecture_code == lecture);
+      var filtered = props.events.filter(event => event.lecture_code === lecture);
       return filtered[0].title;
     }
     return lecture;

@@ -1,10 +1,9 @@
 import React from 'react';
 import axios from "axios";
-import { Form, Input, Icon, Button, Rate, Card } from 'antd';
+import { Form, Button, Rate, Card } from 'antd';
 import { HeartOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions/auth';
-import { Link } from 'react-router-dom';
 
 const FormItem = Form.Item;
 

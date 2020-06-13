@@ -64,7 +64,7 @@ export const authLogin = (username, password) => {
             dispatch(checkAuthTimeout(3600));
         })
         .catch(err => {
-          if(err == "Error: Request failed with status code 400"){
+          if(err === "Error: Request failed with status code 400"){
             err.message = "Niepoprawny login lub hasło";
           }
             dispatch(authFail(err))

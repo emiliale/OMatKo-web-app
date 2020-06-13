@@ -1,13 +1,13 @@
 import React from 'react';
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions/auth';
 
 
 const { SubMenu } = Menu;
-const { Header, Content, Sider, Footer } = Layout;
+const { Header, Content, Footer } = Layout;
 
 class CustomLayout extends React.Component {
     render() {
