@@ -17,6 +17,7 @@ import OrganiserDetail from "./containers/OrganiserDetail";
 import SponsorDetail from "./containers/SponsorDetail";
 import VoteApproved from "./containers/VoteApproved";
 import EventDetail from "./containers/EventDetail";
+import MapContainer from "./containers/Maps";
 
 const BaseRouter = () => (
   <div>
@@ -36,6 +37,7 @@ const BaseRouter = () => (
     <Route exact path="/organisers/:organizerID/" component={OrganiserDetail} />{" "}
     <Route exact path="/contact/" component={Contact} />{" "}
     <Route exact path="/voteApproved/" component={VoteApproved} />{" "}
+    <Route exact path="/maps/" component={MapContainer} />{" "}
   </div>
 );
 

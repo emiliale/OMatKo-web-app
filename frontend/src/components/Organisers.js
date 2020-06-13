@@ -10,7 +10,7 @@ const Organisers = props => {
       <Title>Nad konferencją czuwają...</Title>
       <Paragraph>...dzielni organizatorzy:</Paragraph>
     <List
-      grid={{ gutter: 16, column: 4 }}
+      grid={{ column: 4 }}
       dataSource={props.data}
       renderItem={item => (
         <Card
