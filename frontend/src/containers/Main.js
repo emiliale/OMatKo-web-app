@@ -14,7 +14,7 @@ class Main extends React.Component {
             <img
                 alt="logo"
                 src="http://prac.im.pwr.edu.pl/~omatko/wp-content/uploads/2019/11/foto-edycja-2019-3.jpg"
-                width={'100%'}
+                size={'100%'}
                 />
             </div>
             <div>
@@ -40,12 +40,11 @@ class Main extends React.Component {
             Celem konferencji jest rozwój naukowy uczestników poprzez możliwość prezentacji interesujących zagadnień,
             wyników pierwszych badań czy dzielenie się pasją z innymi studentami. Tegoroczna edycja "OMatKo!!!"
             z pewnością będzie źródłem wielu inspiracji oraz przestrzenią do zawiązywania nowych kontaktów między ambitnymi młodymi ludźmi z różnych uczelni >>
-            <Title style={{ paddingRight: '10%', paddingLeft: '10%', paddingTop: '3%'}}>Serdecznie zapraszamy!</Title>
+            <Title style={{ paddingRight: '10%', paddingLeft: '30%', paddingTop: '3%'}}>Serdecznie zapraszamy!</Title>
             </Paragraph>
         </Typography>
-        </div>);
-            
-
+        </div>
+        );
   }
 }
 
