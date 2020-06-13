@@ -10,24 +10,12 @@ function onFinish() {
   console.log('Czas minął!');
 }
 
-const IconText = ({ type, text }) => (
-  <span>
-    <Icon
-      type={type}
-      style={{
-        marginRight: 8
-      }}
-    />
-    {text}
-  </span>
-);
-
 const Articles = props => {
   return (
     <Typography>
       <Title>Odliczanie</Title>
-      <Countdown title="Do konferencji pozostało:" value={deadline_start} format="D Dni H Godzin m Minut s Sekund" />
-      <Countdown title="Do końca zapisów pozostało:" value={deadline_zapisy} format="D Dni H Godzin m Minut s Sekund" />
+      <Countdown title="Do konferencji pozostało:" value={deadline_start} format="D dni H : m : s " />
+      <Countdown title="Do końca zapisów pozostało:" value={deadline_zapisy} format="D dni H : m : s " />
       <Title>Aktualne informacje:</Title>
     <List
       itemLayout="vertical"

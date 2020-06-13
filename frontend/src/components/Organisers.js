@@ -19,7 +19,6 @@ const Organisers = props => {
           <Meta
             title={<a href={`/organisers/${item.id}`}> {item.surname + " " + item.first_name} </a>}
             avatar={<Avatar src={item.image} />}
-            cover = {<img width={'15%'}  alt={this.state.organizer.first_name} src={this.state.organizer.image} />}
             description={item.email}
           />
           {item.content}

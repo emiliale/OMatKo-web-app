@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { Card } from "antd";
-import { UserOutlined, CalendarOutlined, KeyOutlined} from '@ant-design/icons';
+import { UserOutlined, CalendarOutlined } from '@ant-design/icons';
 
 const env = process.env.NODE_ENV || "development";
 const serverUrl =
