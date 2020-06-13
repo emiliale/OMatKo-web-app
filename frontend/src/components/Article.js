@@ -1,5 +1,14 @@
 import React from "react";
-import { List, Avatar, Icon } from "antd";
+import { List, Avatar, Icon, Statistic, Typography, Title} from "antd";
+
+const { Title } = Typography;
+const { Countdown } = Statistic;
+const deadline_start = Date.now() + 2000 * 60 * 60 * 24 * 2 + 1000 * 30; // Moment is also OK
+const deadline_zapisy = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30; // Moment is also OK
+
+function onFinish() {
+  console.log('Czas minął!');
+}
 
 const IconText = ({ type, text }) => (
   <span>
@@ -15,6 +24,11 @@ const IconText = ({ type, text }) => (
 
 const Articles = props => {
   return (
+    <Typography>
+      <Title>Odliczanie</Title>
+      <Countdown title="Do konferencji pozostało:" value={deadline_start} format="D Dni H Godzin m Minut s Sekund" />
+      <Countdown title="Do końca zapisów pozostało:" value={deadline_zapisy} format="D Dni H Godzin m Minut s Sekund" />
+      <Title>Aktualne informacje:</Title>
     <List
       itemLayout="vertical"
       size="large"
@@ -45,6 +59,7 @@ const Articles = props => {
         </List.Item>
       )}
     />
+    </Typography>
   );
 };
 
