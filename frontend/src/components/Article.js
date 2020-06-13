@@ -1,5 +1,5 @@
 import React from "react";
-import { List, Avatar, Icon, Statistic, Typography, Title} from "antd";
+import { List, Avatar, Icon, Statistic, Typography} from "antd";
 
 const { Title } = Typography;
 const { Countdown } = Statistic;
