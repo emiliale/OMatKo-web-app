@@ -3,7 +3,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import {Card, Typography } from "antd";
 
-const { Title } = Typography;
+const { Title, Paragraph } = Typography;
 const env = process.env.NODE_ENV || "development";
 const serverUrl =
     env === "development"
