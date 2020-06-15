@@ -22,7 +22,6 @@ class Contact extends Component {
     sendRequest = () => {
         const {title, content, email} = this.state
         sendContact(title, content, email).then( res =>{
-            //daj tu wiadomosc jakas albo sprawdz czy jest status 200 i dopiero wtedy daj
             window.alert("Wysłano wiadomość.")
             this.setState({
                 title: "",

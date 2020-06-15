@@ -36,7 +36,7 @@ class MapContainer extends React.Component {
     return (
         <div style={{ paddingRight: '4%', paddingLeft: '1%' }}>
             <Typography>
-                <Title style = {{paddingRight: '10%', paddingLeft: '10%' }}>Ważne miejsca - w żadnym z nich nie może Cię zabraknąć!</Title>
+                <Title>Ważne miejsca - w żadnym z nich nie może Cię zabraknąć!</Title>
         <Map
             google={this.props.google}
             onClick={this.onMapClicked}
