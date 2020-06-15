@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
-import { Typography, Carousel } from 'antd';
+import { Typography } from 'antd';
 
 const { Title, Paragraph} = Typography;
 

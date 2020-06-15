@@ -1,14 +1,12 @@
 import React from "react";
-import { List, Avatar, Icon, Statistic, Typography} from "antd";
+import { List, Avatar, Statistic, Typography} from "antd";
 
 const { Title } = Typography;
 const { Countdown } = Statistic;
 const deadline_start = Date.now() + 2000 * 60 * 60 * 24 * 2 + 1000 * 30; // Moment is also OK
 const deadline_zapisy = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30; // Moment is also OK
 
-function onFinish() {
-  console.log('Czas minął!');
-}
+//function onFinish() {console.log('Czas minął!');}
 
 const Articles = props => {
   return (
