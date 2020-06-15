@@ -93,5 +93,10 @@ Here you can find organisers...
 If you have any questions, please don't hesitate to contact us!
 ![contact](./images/contact.png)
 
+### Maps
+On this map you find important lokalization.
+![contact](./images/maps.PNG)
+
+
 
 
